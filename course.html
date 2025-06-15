@@ -7,13 +7,25 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        html {
+            max-width: 100vw;
+            overflow-x: hidden;
+        }
+        body { font-family: 'Inter', sans-serif; 
+        max-width: 100vw;
+        overflow-x: hidden; 
+        }
+
+        html, body {
+            max-width: 100vw;
+            overflow-x: hidden;
+        }
     </style>
 </head>
 <body class="bg-gray-50">
     <!-- Navigation Bar -->
     <nav class="bg-white shadow-md fixed w-full top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex-shrink-0">
                     <a href="index.html" class="text-xl font-bold text-blue-600">AI Summer School</a>
@@ -37,7 +49,7 @@
         </div>
     </nav>
     <!-- Mobile menu panel (hidden by default) -->
-    <div id="mobile-menu" class="md:hidden hidden absolute top-16 left-0 w-full bg-white shadow-lg z-50">
+    <div id="mobile-menu" class="md:hidden hidden fixed top-16 left-0 w-full bg-white shadow-lg z-50">
         <div class="flex flex-col items-center space-y-4 py-6">
             <a href="speakers.html" class="text-gray-600 hover:text-blue-600">Speakers</a>
             <a href="course.html" class="text-gray-600 hover:text-blue-600">School Course</a>
@@ -46,9 +58,9 @@
             <a href="apply.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Apply Now</a>
         </div>
     </div>
-    <main class="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+    <main class="pt-24 pb-16 px-4 sm:px-6 lg:px-8 w-full">
         <!-- Technical Curriculum Highlights -->
-        <section class="max-w-5xl mx-auto mb-20">
+        <section class="w-full max-w-5xl mx-auto mb-20">
             <h2 class="text-3xl sm:text-4xl font-extrabold text-blue-900 mb-10" style="font-family: 'Inter', serif;">Technical Curriculum Highlights</h2>
             <div class="flex flex-col md:flex-row gap-6 md:gap-4">
                 <div class="flex-1 bg-gray-100 rounded-l-2xl md:rounded-l-2xl md:rounded-r-none flex flex-col items-center py-8 px-4 md:px-0">
@@ -86,14 +98,15 @@
             </div>
         </section>
         <!-- Specialized Research Tracks -->
-        <section class="max-w-5xl mx-auto mb-20">
+        <section class="w-full max-w-5xl mx-auto mb-20">
             <h2 class="text-3xl sm:text-4xl font-extrabold text-blue-900 mb-16 mt-16">Specialized Research Tracks</h2>
             <div class="flex flex-col items-center">
                 <!-- Pyramid -->
                 <div class="w-full max-w-xl mx-auto mb-16 mt-8">
-                    <div class="relative flex flex-col gap-4" style="height: 330px;">
+                    <!-- Responsive pyramid: stack on mobile, pyramid on md+ -->
+                    <div class="flex flex-col gap-4 md:relative md:flex-col" style="height: auto;">
                         <!-- Top -->
-                        <div class="absolute left-1/2 transform -translate-x-1/2 w-2/3 h-20 bg-blue-100 rounded-t-lg flex items-center px-8 py-6 border-b border-blue-200" style="top:0;">
+                        <div class="w-full bg-blue-100 rounded-lg flex items-center px-8 py-6 border-b border-blue-200 md:absolute md:left-1/2 md:transform md:-translate-x-1/2 md:w-2/3 md:rounded-t-lg md:border-b md:border-blue-200" style="top:0;">
                             <span class="mr-4"><svg class="h-7 w-7 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg></span>
                             <div class="pl-2">
                                 <div class="font-bold text-lg text-blue-900">Advances in Arabic NLP</div>
@@ -101,7 +114,7 @@
                             </div>
                         </div>
                         <!-- Middle -->
-                        <div class="absolute left-1/2 transform -translate-x-1/2 w-5/6 h-20 bg-blue-100 flex items-center px-8 py-6 border-b border-blue-200" style="top:90px;">
+                        <div class="w-full bg-blue-100 flex items-center px-8 py-6 border-b border-blue-200 md:absolute md:left-1/2 md:transform md:-translate-x-1/2 md:w-5/6 md:border-b md:border-blue-200" style="top:90px;">
                             <span class="mr-4"><svg class="h-7 w-7 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M12 21C6.477 21 2 16.523 2 11V7a5 5 0 0110 0v4c0 5.523-4.477 10-10 10z"/><path d="M12 21c5.523 0 10-4.477 10-10V7a5 5 0 00-10 0v4c0 5.523 4.477 10 10 10z"/></svg></span>
                             <div class="pl-2">
                                 <div class="font-bold text-lg text-blue-900">ML for Medical Imaging</div>
@@ -109,7 +122,7 @@
                             </div>
                         </div>
                         <!-- Bottom -->
-                        <div class="absolute left-1/2 transform -translate-x-1/2 w-full h-20 bg-blue-100 rounded-b-lg flex items-center px-8 py-6" style="top:180px;">
+                        <div class="w-full bg-blue-100 rounded-b-lg flex items-center px-8 py-6 md:absolute md:left-1/2 md:transform md:-translate-x-1/2 md:w-full md:rounded-b-lg" style="top:180px;">
                             <span class="mr-4"><svg class="h-7 w-7 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M9 12h6"/><path d="M12 9v6"/></svg></span>
                             <div class="pl-2">
                                 <div class="font-bold text-lg text-blue-900">Small Language Modeling</div>
@@ -125,7 +138,7 @@
             </div>
         </section>
         <!-- Program Agenda -->
-        <section class="max-w-5xl mx-auto mb-20">
+        <section class="w-full max-w-5xl mx-auto mb-20">
             <h2 class="text-3xl sm:text-4xl font-extrabold text-blue-900 mb-10 text-center">Program Agenda</h2>
             <div class="flex flex-col items-center">
                 <!-- Tabs -->
@@ -395,7 +408,7 @@
     </main>
     <!-- Footer Section -->
     <footer class="w-full bg-blue-950 pt-16 pb-8 px-4 sm:px-6 lg:px-8 mt-0">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12 md:gap-0">
+        <div class="w-full max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12 md:gap-0">
             <div>
                 <h3 class="text-white text-xl font-bold mb-6">AI Spring School</h3>
                 <ul class="space-y-3">
