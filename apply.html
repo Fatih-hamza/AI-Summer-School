@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply Now - AI Summer School</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-md fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo Text -->
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="text-xl font-bold text-blue-600">AI Summer School</a>
+                </div>
+                
+                <!-- Navigation Links -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="speakers.html" class="text-gray-600 hover:text-blue-600 transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300">Speakers</a>
+                    <a href="course.html" class="text-gray-600 hover:text-blue-600 transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300">School Course</a>
+                    <a href="dates.html" class="text-gray-600 hover:text-blue-600 transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300">Important Dates</a>
+                    <a href="registration.html" class="text-gray-600 hover:text-blue-600 transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300">Registration Info</a>
+                    <a href="apply.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200">Apply Now</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button type="button" class="text-gray-600 hover:text-blue-600 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Application Form Section -->
+    <section class="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto">
+            <h1 class="text-4xl font-bold text-gray-900 mb-12 text-center">Apply Now</h1>
+            
+            <form action="https://getform.io/f/bkkneojb" method="POST" enctype="multipart/form-data" class="bg-white rounded-lg shadow-lg p-8 space-y-6">
+                <!-- Personal Information -->
+                <div class="space-y-6">
+                    <h2 class="text-2xl font-semibold text-gray-900">Personal Information</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="firstName" class="block text-sm font-medium text-gray-700">First Name</label>
+                            <input type="text" id="firstName" name="firstName" required
+                                class="mt-1 block w-full rounded-md border-2 border-gray-300 pl-3 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                        </div>
+                        
+                        <div>
+                            <label for="lastName" class="block text-sm font-medium text-gray-700">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" required
+                                class="mt-1 block w-full rounded-md border-2 border-gray-300 pl-3 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                        <input type="email" id="email" name="email" required
+                            class="mt-1 block w-full rounded-md border-2 border-gray-300 pl-3 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                    </div>
+
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required
+                            class="mt-1 block w-full rounded-md border-2 border-gray-300 pl-3 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                    </div>
+                </div>
+
+                <!-- Professional Information -->
+                <div class="space-y-6">
+                    <h2 class="text-2xl font-semibold text-gray-900">Professional Information</h2>
+                    
+                    <div>
+                        <label for="occupation" class="block text-sm font-medium text-gray-700">Current Occupation</label>
+                        <select id="occupation" name="occupation" required
+                            class="mt-1 block w-full rounded-md border-2 border-gray-300 pl-3 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                            <option value="">Select your occupation</option>
+                            <option value="student">Student (master or engineering)</option>
+                            <option value="researcher">Researcher</option>
+                            <option value="professional">Industry Professional</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="organization" class="block text-sm font-medium text-gray-700">Organization/Institution</label>
+                        <input type="text" id="organization" name="organization" required
+                            class="mt-1 block w-full rounded-md border-2 border-gray-300 pl-3 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                    </div>
+
+                    <div>
+                        <label for="experience" class="block text-sm font-medium text-gray-700">Years of Experience in AI/ML</label>
+                        <select id="experience" name="experience" required
+                            class="mt-1 block w-full rounded-md border-2 border-gray-300 pl-3 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                            <option value="">Select years of experience</option>
+                            <option value="0-1">0-1 years</option>
+                            <option value="1-3">1-3 years</option>
+                            <option value="3-5">3-5 years</option>
+                            <option value="5+">5+ years</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Statement of Interest -->
+                <div class="space-y-6">
+                    <h2 class="text-2xl font-semibold text-gray-900">Statement of Interest</h2>
+                    
+                    <div>
+                        <label for="statement" class="block text-sm font-medium text-gray-700">Why do you want to attend the AI Summer School? (max 500 words)</label>
+                        <textarea id="statement" name="statement" rows="6" required
+                            class="mt-1 block w-full rounded-md border-2 border-gray-300 pl-3 shadow-sm focus:border-blue-500 focus:ring-blue-500"></textarea>
+                    </div>
+                </div>
+
+                <!-- Documents Upload -->
+                <div class="space-y-6">
+                    <h2 class="text-2xl font-semibold text-gray-900">Required Documents</h2>
+                    
+                    <div>
+                        <label for="cv" class="block text-sm font-medium text-gray-700">CV/Resume (PDF)</label>
+                        <input type="file" id="cv" name="cv" accept=".pdf" required
+                            class="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                        <p class="text-xs text-gray-500 mt-1">Maximum file size: 2MB. Only PDF files are accepted.</p>
+                    </div>
+
+                </div>
+
+                <input type="text" name="_gotcha" style="display:none">
+                <input type="hidden" name="_redirect" value="thank-you.html">
+
+                <!-- Submit Button -->
+                <div class="flex justify-center">
+                    <button type="submit"
+                        class="bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors duration-200 shadow-lg hover:shadow-xl">
+                        Submit Application
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="w-full bg-blue-950 pt-16 pb-8 px-4 sm:px-6 lg:px-8 mt-0">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12 md:gap-0">
+            <div>
+                <h3 class="text-white text-xl font-bold mb-6">AI Spring School</h3>
+                <ul class="space-y-3">
+                    <li><a href="course.html" class="text-blue-400 text-lg font-bold tracking-wide hover:underline">School Course</a></li>
+                    <li><a href="speakers.html" class="text-blue-400 text-lg font-bold tracking-wide hover:underline">Speakers</a></li>
+                    <li><a href="index.html#sponsors" class="text-blue-400 text-lg font-bold tracking-wide hover:underline">Sponsors</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-white text-xl font-bold mb-6">Explore</h3>
+                <ul class="space-y-3">
+                    <li><a href="index.html#venue" class="text-blue-400 text-lg font-bold tracking-wide hover:underline">Venue</a></li>
+                    <li><a href="dates.html" class="text-blue-400 text-lg font-bold tracking-wide hover:underline">Important Dates</a></li>
+                    <li><a href="registration.html" class="text-blue-400 text-lg font-bold tracking-wide hover:underline">Registration Info</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-white text-xl font-bold mb-6">Support</h3>
+                <ul class="space-y-3">
+                    <li><a href="contact.html" class="text-blue-400 text-lg font-bold tracking-wide hover:underline">Contact Us</a></li>
+                    <li><a href="privacy.html" class="text-blue-400 text-lg font-bold tracking-wide hover:underline">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mt-12 text-center">
+            <p class="text-blue-400 text-xl font-bold">Copyright© 2025 Institut National des Postes et Télécommunications. All Rights Reserved</p>
+        </div>
+    </footer>
+    <script>
+    // Smooth scroll for venue and sponsors links
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('a[href="index.html#venue"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname === '/index.html') {
+                    e.preventDefault();
+                    document.getElementById('venue').scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+        document.querySelectorAll('a[href="index.html#sponsors"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname === '/index.html') {
+                    e.preventDefault();
+                    document.getElementById('sponsors').scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    });
+
+    // Client-side file size validation for CV upload (max 2MB)
+    document.addEventListener('DOMContentLoaded', function() {
+        var form = document.querySelector('form');
+        var fileInput = document.getElementById('cv');
+        if (form && fileInput) {
+            form.addEventListener('submit', function(e) {
+                if (fileInput.files.length > 0) {
+                    var file = fileInput.files[0];
+                    if (file.size > 2 * 1024 * 1024) { // 2MB in bytes
+                        alert('The selected file exceeds the 2MB size limit. Please choose a smaller PDF.');
+                        e.preventDefault();
+                    }
+                }
+            });
+        }
+    });
+    </script>
+</body>
+</html> 

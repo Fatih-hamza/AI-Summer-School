@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speakers - AI Summer School</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-md fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo Text -->
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="text-xl font-bold text-blue-600">AI Summer School</a>
+                </div>
+                
+                <!-- Navigation Links -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="speakers.html" class="text-blue-600 relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-blue-600">Speakers</a>
+                    <a href="course.html" class="text-gray-600 hover:text-blue-600 transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300">School Course</a>
+                    <a href="dates.html" class="text-gray-600 hover:text-blue-600 transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300">Important Dates</a>
+                    <a href="registration.html" class="text-gray-600 hover:text-blue-600 transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300">Registration Info</a>
+                    <a href="apply.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200">Apply Now</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button type="button" class="text-gray-600 hover:text-blue-600 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Speakers Section -->
+    <section class="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <h1 class="text-4xl font-bold text-gray-900 mb-6 text-center">Meet The Expert Advisers Driving The Event's Agenda</h1>
+            <p class="max-w-3xl mx-auto text-center text-lg text-blue-900 mb-12 font-medium">
+                At the heart of The AI School Spring lies our distinguished Ambassador Chapter. This esteemed group - featuring some of the brightest minds from the University Trento, central Florida, IMT Nord Europe, INPT, and beyond - are not just advisors; they are the architects of the Summit's cutting-edge event agenda, ensuring that every moment you spend with us is an investment in your future.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Speaker Card 1 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col items-center p-6">
+                    <img src="assets/images/speakers/mohamed_daoudi.png" alt="Prof. Mohamed Daoudi" class="w-32 h-32 rounded-full object-cover border-4 border-blue-100 mb-4" />
+                    <h3 class="text-xl font-bold text-blue-900 text-center mb-1">Prof. Mohamed Daoudi</h3>
+                    <div class="text-blue-700 text-center text-base font-medium mb-1">Professor of Computer Science</div>
+                    <div class="text-gray-600 text-center text-sm mb-2">IMT Nord Europe</div>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="mb-4 inline-block" title="LinkedIn">
+                        <svg class="w-6 h-6 text-blue-600 hover:text-blue-800 transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm13.5 11.28h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.89v1.36h.04c.4-.75 1.37-1.54 2.82-1.54 3.02 0 3.58 1.99 3.58 4.58v5.6z"/></svg>
+                    </a>
+                    <div class="w-full mt-2">
+                        <div class="flex justify-center gap-2 mb-4">
+                            <button class="speaker-tab px-4 py-1 rounded-full text-sm font-semibold bg-blue-600 text-white focus:outline-none" data-tab="bio-1">Bio</button>
+                            <button class="speaker-tab px-4 py-1 rounded-full text-sm font-semibold bg-blue-100 text-blue-900 focus:outline-none" data-tab="session-1">Session</button>
+                        </div>
+                        <div class="speaker-tab-content" id="bio-1">
+                            <p class="text-gray-700 text-sm">Prof. Mohamed Daoudi is a leading researcher in computer vision and AI, with a focus on 3D shape analysis and facial recognition. He has published extensively and is a frequent speaker at international conferences.</p>
+                        </div>
+                        <div class="speaker-tab-content hidden" id="session-1">
+                            <p class="text-gray-700 text-sm">In his session, Prof. Daoudi will discuss the latest advances in 3D vision and its applications in AI, including practical demonstrations and research insights.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Speaker Card 2 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col items-center p-6">
+                    <img src="assets/images/speakers/del_bimbo.jpeg" alt="Prof. Alberto Del Bimbo" class="w-32 h-32 rounded-full object-cover border-4 border-blue-100 mb-4" />
+                    <h3 class="text-xl font-bold text-blue-900 text-center mb-1">Prof. Alberto Del Bimbo</h3>
+                    <div class="text-blue-700 text-center text-base font-medium mb-1">Professor of Computer Engineering</div>
+                    <div class="text-gray-600 text-center text-sm mb-2">University of Florence</div>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="mb-4 inline-block" title="LinkedIn">
+                        <svg class="w-6 h-6 text-blue-600 hover:text-blue-800 transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm13.5 11.28h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.89v1.36h.04c.4-.75 1.37-1.54 2.82-1.54 3.02 0 3.58 1.99 3.58 4.58v5.6z"/></svg>
+                    </a>
+                    <div class="w-full mt-2">
+                        <div class="flex justify-center gap-2 mb-4">
+                            <button class="speaker-tab px-4 py-1 rounded-full text-sm font-semibold bg-blue-600 text-white focus:outline-none" data-tab="bio-2">Bio</button>
+                            <button class="speaker-tab px-4 py-1 rounded-full text-sm font-semibold bg-blue-100 text-blue-900 focus:outline-none" data-tab="session-2">Session</button>
+                        </div>
+                        <div class="speaker-tab-content" id="bio-2">
+                            <p class="text-gray-700 text-sm">Prof. Alberto Del Bimbo is a renowned expert in multimedia and computer vision, with decades of experience in academic research and leadership. He has contributed to major advances in video analysis and pattern recognition.</p>
+                        </div>
+                        <div class="speaker-tab-content hidden" id="session-2">
+                            <p class="text-gray-700 text-sm">Prof. Del Bimbo's session will cover the intersection of multimedia, AI, and computer vision, with a focus on real-world applications and future trends.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Speaker Card 3 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col items-center p-6">
+                    <img src="assets/images/speakers/speaker2.jpg" alt="Dr. Jane Smith" class="w-32 h-32 rounded-full object-cover border-4 border-blue-100 mb-4" />
+                    <h3 class="text-xl font-bold text-blue-900 text-center mb-1">Dr. Jane Smith</h3>
+                    <div class="text-blue-700 text-center text-base font-medium mb-1">AI Research Director</div>
+                    <div class="text-gray-600 text-center text-sm mb-2">University of Rabat</div>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="mb-4 inline-block" title="LinkedIn">
+                        <svg class="w-6 h-6 text-blue-600 hover:text-blue-800 transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm13.5 11.28h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.89v1.36h.04c.4-.75 1.37-1.54 2.82-1.54 3.02 0 3.58 1.99 3.58 4.58v5.6z"/></svg>
+                    </a>
+                    <div class="w-full mt-2">
+                        <div class="flex justify-center gap-2 mb-4">
+                            <button class="speaker-tab px-4 py-1 rounded-full text-sm font-semibold bg-blue-600 text-white focus:outline-none" data-tab="bio-3">Bio</button>
+                            <button class="speaker-tab px-4 py-1 rounded-full text-sm font-semibold bg-blue-100 text-blue-900 focus:outline-none" data-tab="session-3">Session</button>
+                        </div>
+                        <div class="speaker-tab-content" id="bio-3">
+                            <p class="text-gray-700 text-sm">Dr. Jane Smith is a leading AI researcher with over 15 years of experience in multimodal foundation models. Her work bridges academia and industry, focusing on the development of robust, scalable AI systems for real-world applications. She is passionate about mentoring young researchers and advancing the field of responsible AI.</p>
+                        </div>
+                        <div class="speaker-tab-content hidden" id="session-3">
+                            <p class="text-gray-700 text-sm">In her session, Dr. Smith will explore the latest advances in multimodal foundation models, discussing practical challenges and opportunities. Attendees will gain insights into model architectures, training strategies, and deployment best practices for large-scale AI systems.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Speaker Card 4 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col items-center p-6">
+                    <img src="assets/images/speakers/speaker1.jpg" alt="Prof. John Doe" class="w-32 h-32 rounded-full object-cover border-4 border-blue-100 mb-4" />
+                    <h3 class="text-xl font-bold text-blue-900 text-center mb-1">Prof. John Doe</h3>
+                    <div class="text-blue-700 text-center text-base font-medium mb-1">Machine Learning Professor</div>
+                    <div class="text-gray-600 text-center text-sm mb-2">MoroccoAI</div>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="mb-4 inline-block" title="LinkedIn">
+                        <svg class="w-6 h-6 text-blue-600 hover:text-blue-800 transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm13.5 11.28h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.89v1.36h.04c.4-.75 1.37-1.54 2.82-1.54 3.02 0 3.58 1.99 3.58 4.58v5.6z"/></svg>
+                    </a>
+                    <div class="w-full mt-2">
+                        <div class="flex justify-center gap-2 mb-4">
+                            <button class="speaker-tab px-4 py-1 rounded-full text-sm font-semibold bg-blue-600 text-white focus:outline-none" data-tab="bio-4">Bio</button>
+                            <button class="speaker-tab px-4 py-1 rounded-full text-sm font-semibold bg-blue-100 text-blue-900 focus:outline-none" data-tab="session-4">Session</button>
+                        </div>
+                        <div class="speaker-tab-content" id="bio-4">
+                            <p class="text-gray-700 text-sm">Prof. John Doe is a renowned professor at MoroccoAI, specializing in generative AI and deep learning. He has published extensively in top-tier conferences and is known for his engaging teaching style and commitment to open science.</p>
+                        </div>
+                        <div class="speaker-tab-content hidden" id="session-4">
+                            <p class="text-gray-700 text-sm">Prof. Doe's session will cover the latest trends in generative AI, including hands-on demonstrations of deep learning architectures and their applications in creative industries.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="w-full bg-blue-950 pt-16 pb-8 px-4 sm:px-6 lg:px-8 mt-0">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12 md:gap-0">
+            <div>
+                <h3 class="text-white text-xl font-bold mb-6">AI Spring School</h3>
+                <ul class="space-y-3">
+                    <li><a href="course.html" class="text-blue-400 text-lg font-bold tracking-wide hover:underline">School Course</a></li>
+                    <li><a href="speakers.html" class="text-blue-400 text-lg font-bold tracking-wide hover:underline">Speakers</a></li>
+                    <li><a href="index.html#sponsors" class="text-blue-400 text-lg font-bold tracking-wide hover:underline">Sponsors</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-white text-xl font-bold mb-6">Explore</h3>
+                <ul class="space-y-3">
+                    <li><a href="index.html#venue" class="text-blue-400 text-lg font-bold tracking-wide hover:underline">Venue</a></li>
+                    <li><a href="dates.html" class="text-blue-400 text-lg font-bold tracking-wide hover:underline">Important Dates</a></li>
+                    <li><a href="registration.html" class="text-blue-400 text-lg font-bold tracking-wide hover:underline">Registration Info</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-white text-xl font-bold mb-6">Support</h3>
+                <ul class="space-y-3">
+                    <li><a href="contact.html" class="text-blue-400 text-lg font-bold tracking-wide hover:underline">Contact Us</a></li>
+                    <li><a href="privacy.html" class="text-blue-400 text-lg font-bold tracking-wide hover:underline">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mt-12 text-center">
+            <p class="text-blue-400 text-xl font-bold">Copyright© 2025 Institut National des Postes et Télécommunications. All Rights Reserved</p>
+        </div>
+    </footer>
+    <script>
+    // Smooth scroll for venue and sponsors links
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('a[href="index.html#venue"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname === '/index.html') {
+                    e.preventDefault();
+                    document.getElementById('venue').scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+        document.querySelectorAll('a[href="index.html#sponsors"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname === '/index.html') {
+                    e.preventDefault();
+                    document.getElementById('sponsors').scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Speaker card tab logic
+        document.querySelectorAll('.speaker-tab').forEach(function(tab) {
+            tab.addEventListener('click', function() {
+                var card = tab.closest('.bg-white');
+                var allTabs = card.querySelectorAll('.speaker-tab');
+                var allContents = card.querySelectorAll('.speaker-tab-content');
+                allTabs.forEach(function(t) {
+                    t.classList.remove('bg-blue-600', 'text-white');
+                    t.classList.add('bg-blue-100', 'text-blue-900');
+                });
+                tab.classList.remove('bg-blue-100', 'text-blue-900');
+                tab.classList.add('bg-blue-600', 'text-white');
+                allContents.forEach(function(content) {
+                    content.classList.add('hidden');
+                });
+                var showId = tab.getAttribute('data-tab');
+                card.querySelector('#' + showId).classList.remove('hidden');
+            });
+        });
+    });
+    </script>
+</body>
+</html> 

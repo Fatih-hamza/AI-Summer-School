@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Summer School - Multimodal Foundation Models and Generative AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .icon-animate {
+            transition: color 0.2s, transform 0.3s;
+        }
+        .icon-animate:hover {
+            color: #14b8a6; /* teal-500 accent */
+            animation: bounce-icon 0.5s;
+        }
+        @keyframes bounce-icon {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        .cta-gradient {
+            background: linear-gradient(90deg, #2563eb 0%, #14b8a6 100%);
+            box-shadow: 0 8px 24px rgba(59,130,246,0.15);
+        }
+        .cta-gradient:hover {
+            background: linear-gradient(90deg, #14b8a6 0%, #2563eb 100%);
+            box-shadow: 0 12px 32px rgba(20,184,166,0.18);
+        }
+        .active-nav {
+            border-bottom: 3px solid #2563eb;
+            color: #1e293b !important;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-md fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo Text -->
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="text-xl font-bold text-blue-600">AI Summer School</a>
+                </div>
+                
+                <!-- Navigation Links -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="speakers.html" class="text-gray-600 hover:text-blue-600 transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300">Speakers</a>
+                    <a href="course.html" class="text-gray-600 hover:text-blue-600 transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300">School Course</a>
+                    <a href="dates.html" class="text-gray-600 hover:text-blue-600 transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300">Important Dates</a>
+                    <a href="registration.html" class="text-gray-600 hover:text-blue-600 transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300">Registration Info</a>
+                    <a href="apply.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200">Apply Now</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button type="button" class="text-gray-600 hover:text-blue-600 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-32 pb-16 md:pb-32 relative overflow-hidden bg-blue-50" id="hero-section">
+        <canvas id="animated-bg" class="absolute inset-0 w-full h-full pointer-events-none z-0"></canvas>
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <!-- Logos -->
+            <div id="hero-logos" class="flex justify-center items-center space-x-4 sm:space-x-8 mb-12 will-change-transform">
+                <img src="assets/images/logos/Logo_inpt.png" alt="INPT Logo" class="h-12 sm:h-16 md:h-20 w-auto object-contain">
+                <img src="assets/images/logos/logo_moroccoAI.png" alt="MoroccoAI Logo" class="h-12 sm:h-16 md:h-20 w-auto object-contain">
+            </div>
+            
+            <!-- Title -->
+            <h1 id="hero-title" class="text-4xl sm:text-5xl font-bold text-blue-900 mb-8 leading-tight will-change-transform">
+                Summer School on Multimodal Foundation Models and Generative AI
+            </h1>
+            
+            <!-- Description -->
+            <div class="prose prose-lg mx-auto mb-12 text-gray-600">
+                <p class="mb-4">
+                    Welcome to the AI Summer School, an immersive five-day program jointly organized by MoroccoAI and Institut National Des Postes et Télécommunication (INPT). Taking place September 8-12 at INPT Rabat, this transformative experience will equip participants with cutting-edge AI knowledge and skills.
+                </p>
+                <p class="mb-8">
+                    Gain practical knowledge to advance Morocco's AI capabilities and your own career prospects.
+                </p>
+            </div>
+            
+            <!-- CTA Button -->
+            <a href="apply.html" class="inline-block bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors duration-200 shadow-lg hover:shadow-xl">
+                Apply Now
+            </a>
+        </div>
+    </section>
+
+    <!-- About the Summer School Section -->
+    <section class="w-full bg-blue-50 py-20 px-4 sm:px-6 lg:px-8" data-aos="fade-up">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-blue-900 mb-16 text-center tracking-tight" style="font-family: 'Inter', sans-serif;">
+                About the Summer School
+            </h2>
+            <div class="relative flex flex-col md:flex-row md:items-start md:justify-center">
+                <!-- Timeline vertical line -->
+                <div class="hidden md:block absolute left-1/2 top-0 h-full w-1 bg-gradient-to-b from-blue-200 via-blue-400 to-blue-200 rounded-full z-0"></div>
+                <div class="flex flex-col md:flex-row w-full md:space-x-16">
+                    <!-- Left side (In-depth Analysis, Research Opportunity) -->
+                    <div class="flex-1 flex flex-col space-y-24 md:space-y-32">
+                        <div class="flex flex-col items-center md:items-end text-center md:text-right">
+                            <div class="text-xl font-semibold text-blue-900 mb-2">In-depth Analysis</div>
+                            <div class="text-gray-700 max-w-md">
+                                Clear overview of state-of-the-art research in <span class="text-blue-600 font-medium">Multimodal Foundation Models</span> and <span class="text-blue-600 font-medium">Generative AI</span>.
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center md:items-end text-center md:text-right">
+                            <div class="text-xl font-semibold text-blue-900 mb-2">Research Opportunity</div>
+                            <div class="text-gray-700 max-w-md">
+                                Young researchers and Ph.D. students benefit from direct interaction with AI leaders.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Timeline icons -->
+                    <div class="flex flex-col items-center justify-between z-10 mx-auto md:mx-0">
+                        <div class="flex flex-col items-center space-y-24 md:space-y-32">
+                            <div class="bg-gradient-to-tr from-blue-100 to-blue-300 shadow-lg rounded-xl p-4 flex items-center justify-center mb-2">
+                                <svg class="h-8 w-8 text-blue-700 icon-animate" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422A12.083 12.083 0 0112 21.5a12.083 12.083 0 01-6.16-10.922L12 14z"/></svg>
+                            </div>
+                            <div class="bg-gradient-to-tr from-blue-100 to-blue-300 shadow-lg rounded-xl p-4 flex items-center justify-center mb-2">
+                                <svg class="h-8 w-8 text-blue-700 icon-animate" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 16h-1v-4h-1m1-4h.01M12 2a10 10 0 100 20 10 10 0 000-20z"/></svg>
+                            </div>
+                            <div class="bg-gradient-to-tr from-blue-100 to-blue-300 shadow-lg rounded-xl p-4 flex items-center justify-center mb-2">
+                                <svg class="h-8 w-8 text-blue-700 icon-animate" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H7a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Right side (Expert Instruction, Building Leadership) -->
+                    <div class="flex-1 flex flex-col space-y-24 md:space-y-32">
+                        <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                            <div class="text-xl font-semibold text-blue-900 mb-2">Expert Instruction</div>
+                            <div class="text-gray-700 max-w-md">
+                                Courses delivered by world-renowned experts covering theoretical and practical aspects.
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                            <div class="text-xl font-semibold text-blue-900 mb-2">Building Leadership</div>
+                            <div class="text-gray-700 max-w-md">
+                                <span class="text-blue-600 font-medium">Partnership</span> aims to develop the next generation of AI leaders in Morocco.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="w-full bg-blue-100 relative py-20 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center" data-aos="fade-up">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-4xl sm:text-5xl font-extrabold text-blue-900 mb-4 leading-tight uppercase">
+                Experience the Future of Multimodal AI,
+            </h2>
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-blue-800 mb-12 leading-tight uppercase">
+                Where Foundation Models, Vision, and Language Come to Life
+            </h3>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-8 sm:gap-0 mb-12">
+                <div class="flex-1 px-8">
+                    <div class="text-4xl font-extrabold text-blue-900 mb-1"><span class="counter" data-target="20">0</span>+</div>
+                    <div class="text-xl font-bold text-blue-900 mb-1">Expert Sessions</div>
+                    <div class="text-base text-blue-900">Hours of learning from leading researchers and practitioners</div>
+                </div>
+                <div class="hidden sm:block border-l-2 border-blue-200 h-16 mx-2"></div>
+                <div class="flex-1 px-8">
+                    <div class="text-4xl font-extrabold text-blue-900 mb-1"><span class="counter" data-target="15">0</span>+</div>
+                    <div class="text-xl font-bold text-blue-900 mb-1">Hands-on Labs</div>
+                    <div class="text-base text-blue-900">Practical implementation of advanced AI concepts</div>
+                </div>
+                <div class="hidden sm:block border-l-2 border-blue-200 h-16 mx-2"></div>
+                <div class="flex-1 px-8">
+                    <div class="text-4xl font-extrabold text-blue-900 mb-1"><span class="counter" data-target="50">0</span>+</div>
+                    <div class="text-xl font-bold text-blue-900 mb-1">Participants</div>
+                    <div class="text-base text-blue-900">Building a strong network of AI enthusiasts across Morocco</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+        <!-- Countdown Section -->
+        <section class="w-full bg-white border-t border-blue-100 py-16" data-aos="fade-up">
+            <div class="max-w-4xl mx-auto flex flex-col items-center justify-center">
+                <div id="countdown" class="w-full flex flex-col sm:flex-row items-center justify-center gap-10 sm:gap-20">
+                    <div class="flex flex-col items-center">
+                        <span id="days" class="text-6xl sm:text-7xl md:text-8xl font-extrabold text-blue-600 tracking-tight">00</span>
+                        <span class="mt-4 text-2xl sm:text-3xl md:text-4xl font-extrabold text-blue-900 tracking-widest">DAYS</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <span id="hours" class="text-6xl sm:text-7xl md:text-8xl font-extrabold text-blue-600 tracking-tight">00</span>
+                        <span class="mt-4 text-2xl sm:text-3xl md:text-4xl font-extrabold text-blue-900 tracking-widest">HOURS</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <span id="minutes" class="text-6xl sm:text-7xl md:text-8xl font-extrabold text-blue-600 tracking-tight">00</span>
+                        <span class="mt-4 text-2xl sm:text-3xl md:text-4xl font-extrabold text-blue-900 tracking-widest">MINUTES</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <span id="seconds" class="text-6xl sm:text-7xl md:text-8xl font-extrabold text-blue-600 tracking-tight">00</span>
+                        <span class="mt-4 text-2xl sm:text-3xl md:text-4xl font-extrabold text-blue-900 tracking-widest">SECONDS</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <script>
+        // Countdown Timer Script
+        const eventDate = new Date('2025-09-08T00:00:00');
+        function updateCountdown() {
+            const now = new Date();
+            const diff = eventDate - now;
+            if (diff <= 0) {
+                document.getElementById('countdown').innerHTML = '<span class="text-3xl font-bold text-teal-400">The event has started!</span>';
+                return;
+            }
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        }
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+        </script>
+
+        <!-- Who Should Attend Section -->
+        <section class="w-full bg-blue-50 py-20 px-4 sm:px-6 lg:px-8" data-aos="fade-up">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-blue-900 mb-14 text-center tracking-tight" style="font-family: 'Inter', sans-serif;">
+                    Who Should Attend?
+                </h2>
+                <div class="flex flex-col md:flex-row gap-10 md:gap-16 justify-center items-stretch">
+                    <!-- Persona 1: PhD Holders & Students -->
+                    <div class="flex-1 bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 rounded-2xl shadow-lg p-8 flex flex-col items-center text-center transition-all duration-300 hover:border-blue-500 hover:shadow-2xl">
+                        <div class="bg-blue-600 rounded-full p-4 mb-6 shadow-md">
+                            <svg class="h-10 w-10 text-white icon-animate" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422A12.083 12.083 0 0112 21.5a12.083 12.083 0 01-6.16-10.922L12 14z"/></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-blue-900 mb-3">PhD Holders & Students</h3>
+                        <p class="text-gray-700 mb-5 text-lg">Expand your research horizons, connect with top minds, and stay ahead of the curve in AI innovation.</p>
+                        <ul class="text-left text-base text-blue-900 space-y-3 font-medium">
+                            <li class="flex items-start"><span class="inline-block w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3"></span>Unmatched networking with leading researchers and peers</li>
+                            <li class="flex items-start"><span class="inline-block w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3"></span>Deep dives into current AI & development trends</li>
+                            <li class="flex items-start"><span class="inline-block w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3"></span>Explore state-of-the-art solutions across industries</li>
+                            <li class="flex items-start"><span class="inline-block w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3"></span>Discover new research problems and collaboration opportunities</li>
+                        </ul>
+                    </div>
+                    <!-- Persona 2: Engineering & Master Students -->
+                    <div class="flex-1 bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 rounded-2xl shadow-lg p-8 flex flex-col items-center text-center transition-all duration-300 hover:border-blue-500 hover:shadow-2xl">
+                        <div class="bg-blue-600 rounded-full p-4 mb-6 shadow-md">
+                            <svg class="h-10 w-10 text-white icon-animate" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9.75 17L9 21l3-1.5L15 21l-.75-4M4 4h16v2a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm0 0V2a2 2 0 012-2h12a2 2 0 012 2v2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v2m-6 0h6"/></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-blue-900 mb-3">Engineering & Master Students</h3>
+                        <p class="text-gray-700 mb-5 text-lg">Fuel your curiosity, build real projects, and get hands-on with the latest in AI—mentored by industry leaders.</p>
+                        <ul class="text-left text-base text-blue-900 space-y-3 font-medium">
+                            <li class="flex items-start"><span class="inline-block w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3"></span>Practical labs and real-world AI challenges</li>
+                            <li class="flex items-start"><span class="inline-block w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3"></span>Mentorship from top-tier professionals</li>
+                            <li class="flex items-start"><span class="inline-block w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3"></span>Opportunities to build, experiment, and innovate</li>
+                            <li class="flex items-start"><span class="inline-block w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3"></span>Connect with a community of passionate builders</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Vertical Timeline with Floating Cards -->
+        <section id="vertical-timeline" class="w-full bg-white py-20 px-4 sm:px-6 lg:px-8" data-aos="fade-up">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-blue-900 mb-12 text-center tracking-tight">Daily Schedule Overview</h2>
+                <div class="relative flex flex-col items-center">
+                    <!-- Standard vertical line -->
+                    <div id="timeline-line" class="absolute left-1/2 top-0 h-full w-1 bg-gradient-to-b from-blue-300 via-blue-500 to-blue-700 -translate-x-1/2 z-0"></div>
+                    <div class="flex flex-col gap-24 z-10 w-full">
+                        <!-- Morning -->
+                        <div class="flex md:flex-row flex-col md:items-center md:gap-16 w-full relative min-h-[120px]">
+                            <div class="md:w-1/2 md:pr-16 flex justify-end md:justify-end mb-4 md:mb-0" data-aos="slide-left" data-aos-delay="200">
+                                <div class="relative bg-white rounded-xl shadow-lg p-8 border-2 border-blue-400 hover:border-blue-600 transition-all duration-300 flex flex-col items-center text-center">
+                                    <span class="bg-blue-600 text-white rounded-full p-3 mb-3"><svg class="h-7 w-7 icon-animate" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 17V5.5A2.5 2.5 0 019 3h6a2.5 2.5 0 012.5 2.5V17"/><path d="M9 7h6"/></svg></span>
+                                    <div class="text-lg font-bold text-blue-900 mb-1">Morning</div>
+                                    <div class="text-gray-700 text-center">Technical lectures & theory sessions</div>
+                                </div>
+                            </div>
+                            <div class="md:w-1/2 flex justify-start"></div>
+                        </div>
+                        <!-- Early Afternoon -->
+                        <div class="flex md:flex-row flex-col md:items-center md:gap-16 w-full relative min-h-[120px]">
+                            <div class="md:w-1/2 flex justify-end"></div>
+                            <div class="md:w-1/2 md:pl-16 flex justify-start md:justify-start mb-4 md:mb-0" data-aos="slide-right" data-aos-delay="200">
+                                <div class="relative bg-white rounded-xl shadow-lg p-8 border-2 border-blue-400 hover:border-blue-600 transition-all duration-300 flex flex-col items-center text-center">
+                                    <span class="bg-blue-600 text-white rounded-full p-3 mb-3"><svg class="h-7 w-7 icon-animate" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 2v4"/><path d="M16 2v4"/><path d="M3 10h18"/></svg></span>
+                                    <div class="text-lg font-bold text-blue-900 mb-1">Early Afternoon</div>
+                                    <div class="text-gray-700 text-center">Hands-on workshops & tutorials</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Late Afternoon -->
+                        <div class="flex md:flex-row flex-col md:items-center md:gap-16 w-full relative min-h-[120px]">
+                            <div class="md:w-1/2 md:pr-16 flex justify-end md:justify-end mb-4 md:mb-0" data-aos="slide-left" data-aos-delay="200">
+                                <div class="relative bg-white rounded-xl shadow-lg p-8 border-2 border-blue-400 hover:border-blue-600 transition-all duration-300 flex flex-col items-center text-center">
+                                    <span class="bg-blue-600 text-white rounded-full p-3 mb-3"><svg class="h-7 w-7 icon-animate" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H7a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></span>
+                                    <div class="text-lg font-bold text-blue-900 mb-1">Late Afternoon</div>
+                                    <div class="text-gray-700 text-center">Project work & mentorship</div>
+                                </div>
+                            </div>
+                            <div class="md:w-1/2 flex justify-start"></div>
+                        </div>
+                        <!-- Evening -->
+                        <div class="flex md:flex-row flex-col md:items-center md:gap-16 w-full relative min-h-[120px]">
+                            <div class="md:w-1/2 flex justify-end"></div>
+                            <div class="md:w-1/2 md:pl-16 flex justify-start md:justify-start mb-4 md:mb-0" data-aos="slide-right" data-aos-delay="200">
+                                <div class="relative bg-white rounded-xl shadow-lg p-8 border-2 border-blue-400 hover:border-blue-600 transition-all duration-300 flex flex-col items-center text-center">
+                                    <span class="bg-blue-600 text-white rounded-full p-3 mb-3"><svg class="h-7 w-7 icon-animate" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17.293 17.293A8 8 0 016.707 6.707a8.001 8.001 0 1010.586 10.586z"/><path d="M9 17c.333-1.333 1.333-4 5-4"/></svg></span>
+                                    <div class="text-lg font-bold text-blue-900 mb-1">Evening</div>
+                                    <div class="text-gray-700 text-center">Networking & social activities</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="max-w-5xl mx-auto mt-12 text-center text-gray-700 text-lg px-2 sm:px-4 bg-white">
+                <p class="mb-4">Each day is carefully structured to balance theoretical learning with practical application. Mornings are dedicated to foundational concepts presented by expert speakers, while afternoons focus on hands-on implementation and project development.</p>
+                <p>Evening activities provide valuable opportunities to build connections with fellow participants, mentors, and speakers in more relaxed settings. This comprehensive approach ensures participants gain both technical skills and professional networks.</p>
+            </div>
+        </section>
+
+        
+
+        <!-- About the Organizers Section -->
+        <section class="w-full bg-blue-50 py-20 px-4 sm:px-6 lg:px-8" data-aos="fade-up">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-4xl font-extrabold text-gray-900 mb-12 text-center">About the Organizers</h2>
+                <div class="flex flex-col md:flex-row gap-10 md:gap-8 justify-center">
+                    <!-- INPT -->
+                    <div class="flex-1 flex flex-col items-center text-center">
+                        <span class="mb-4 flex items-center justify-center">
+                            <img src="assets/images/logos/Logo_inpt.png" alt="INPT Logo" class="h-12 w-auto object-contain" />
+                        </span>
+                        <p class="text-gray-700">The Institut National des Postes et Télécommunications is one of Morocco's premier engineering schools, specializing in telecommunications and information technology education and research.</p>
+                    </div>
+                    <!-- MoroccoAI -->
+                    <div class="flex-1 flex flex-col items-center text-center">
+                        <span class="mb-4 flex items-center justify-center">
+                            <img src="assets/images/logos/logo_moroccoAI.png" alt="MoroccoAI Logo" class="h-12 w-auto object-contain" />
+                        </span>
+                        <p class="text-gray-700">A leading non-profit organization dedicated to advancing artificial intelligence research, education, and implementation in Morocco through community building and knowledge sharing.</p>
+                    </div>
+                    <!-- Strategic Partnership -->
+                    <div class="flex-1 flex flex-col items-center text-center">
+                        <span class="mb-4 flex items-center justify-center">
+                            <img src="assets/images/partnership.png" alt="Partnership" class="h-12 w-auto object-contain" />
+                        </span>
+                        <p class="text-gray-700">This strategic partnership brings together academic excellence and industry connections to create an unparalleled learning experience for participants and strengthen Morocco's AI ecosystem.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What you will experience on site Section -->
+        <section class="w-full bg-white py-24 px-4 sm:px-6 lg:px-8" data-aos="fade-up">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-blue-900 mb-16 text-center tracking-tight">What you will experience on site:</h2>
+                <div class="flex flex-col gap-12">
+                    <!-- 1. Stellar Conference Speakers -->
+                    <div class="bg-white rounded-3xl shadow-2xl flex flex-col md:flex-row items-stretch overflow-hidden transition-all duration-300 border-2 border-blue-100 hover:border-blue-500 hover:shadow-blue-200 group">
+                        <div class="flex-1 flex items-center justify-center p-10 order-2 md:order-1">
+                            <div>
+                                <div class="text-lg font-extrabold text-blue-500 mb-3">01</div>
+                                <div class="text-2xl font-extrabold text-blue-800 mb-3">Stellar <span class="text-blue-600">Conference Speakers:</span></div>
+                                <div class="text-gray-700 text-lg">Our speaker line-up is absolutely unmatched, including the Heads of Policy & Public Engagement, Vice Presidents, Chief Privacy & Data Responsibility Officers, Directors for Technology and Research Investments and more!</div>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 h-64 md:h-auto order-1 md:order-2">
+                            <img src="assets/images/experience/speakers.jpg" alt="Conference Speakers" class="object-cover w-full h-full rounded-t-3xl md:rounded-t-none md:rounded-r-3xl group-hover:scale-105 transition-transform duration-300" />
+                        </div>
+                    </div>
+                    <!-- 2. Labs -->
+                    <div class="bg-white rounded-3xl shadow-2xl flex flex-col md:flex-row items-stretch overflow-hidden transition-all duration-300 border-2 border-blue-100 hover:border-blue-500 hover:shadow-blue-200 group">
+                        <div class="md:w-1/2 h-64 md:h-auto">
+                            <img src="assets/images/experience/labs.jpg" alt="Labs" class="object-cover w-full h-full rounded-t-3xl md:rounded-tl-3xl md:rounded-tr-none group-hover:scale-105 transition-transform duration-300" />
+                        </div>
+                        <div class="flex-1 flex items-center justify-center p-10">
+                            <div>
+                                <div class="text-lg font-extrabold text-blue-500 mb-3">02</div>
+                                <div class="text-2xl font-extrabold text-blue-800 mb-3"><span class="text-blue-600">Labs:</span></div>
+                                <div class="text-gray-700 text-lg">Practical sessions to equip with the knowledge you need to upgrade yourself and your projects. From Deep learning techniques to secure AI usage, You are guaranteed to find what you need.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 3. Panels -->
+                    <div class="bg-white rounded-3xl shadow-2xl flex flex-col md:flex-row items-stretch overflow-hidden transition-all duration-300 border-2 border-blue-100 hover:border-blue-500 hover:shadow-blue-200 group">
+                        <div class="flex-1 flex items-center justify-center p-10 order-2 md:order-1">
+                            <div>
+                                <div class="text-lg font-extrabold text-blue-500 mb-3">03</div>
+                                <div class="text-2xl font-extrabold text-blue-800 mb-3">Panels:</div>
+                                <div class="text-gray-700 text-lg">Great Caliber discussion between leaders, researchers, and decision makers discussing ...</div>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 h-64 md:h-auto order-1 md:order-2">
+                            <img src="assets/images/experience/panels.jpg" alt="Panels" class="object-cover w-full h-full rounded-t-3xl md:rounded-t-none md:rounded-r-3xl group-hover:scale-105 transition-transform duration-300" />
+                        </div>
+                    </div>
+                    <!-- 4. Case Studies -->
+                    <div class="bg-white rounded-3xl shadow-2xl flex flex-col md:flex-row items-stretch overflow-hidden transition-all duration-300 border-2 border-blue-100 hover:border-blue-500 hover:shadow-blue-200 group">
+                        <div class="md:w-1/2 h-64 md:h-auto">
+                            <img src="assets/images/experience/case-studies.jpg" alt="Case Studies" class="object-cover w-full h-full rounded-t-3xl md:rounded-tl-3xl md:rounded-tr-none group-hover:scale-105 transition-transform duration-300" />
+                        </div>
+                        <div class="flex-1 flex items-center justify-center p-10">
+                            <div>
+                                <div class="text-lg font-extrabold text-blue-500 mb-3">04</div>
+                                <div class="text-2xl font-extrabold text-blue-800 mb-3"><span class="text-blue-600">Case Studies:</span></div>
+                                <div class="text-gray-700 text-lg">See showcasing their latest AI solutions and products. Discover the tools and innovations that can propel your business forward.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 5. Networking -->
+                    <div class="bg-white rounded-3xl shadow-2xl flex flex-col md:flex-row items-stretch overflow-hidden transition-all duration-300 border-2 border-blue-100 hover:border-blue-500 hover:shadow-blue-200 group">
+                        <div class="flex-1 flex items-center justify-center p-10 order-2 md:order-1">
+                            <div>
+                                <div class="text-lg font-extrabold text-blue-500 mb-3">05</div>
+                                <div class="text-2xl font-extrabold text-blue-800 mb-3">Networking:</div>
+                                <div class="text-gray-700 text-lg">Connect with 4,500+ attendees. There's plenty of opportunities to meet and mingle with your peers at The Networking Cafés and breaks.</div>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 h-64 md:h-auto order-1 md:order-2">
+                            <img src="assets/images/experience/networking.jpg" alt="Networking" class="object-cover w-full h-full rounded-t-3xl md:rounded-t-none md:rounded-r-3xl group-hover:scale-105 transition-transform duration-300" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Proof Section -->
+        <section class="w-full bg-blue-50 py-16 px-4 sm:px-6 lg:px-8" data-aos="fade-up">
+            <div class="max-w-4xl mx-auto flex flex-col items-center">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-blue-900 mb-10 text-center">Hear What Our Attendees Have To Say</h2>
+                <div id="testimonial-card" class="bg-white rounded-3xl shadow-2xl p-0 text-center max-w-4xl mx-auto transition-all duration-500 min-h-[180px] flex flex-row items-stretch overflow-hidden">
+                    <div class="w-1/2 min-w-[180px] flex-shrink-0 flex items-center justify-center bg-gray-100">
+                        <img src="assets/images/social_proof/social_proof.jpg" alt="Attendees Group" class="w-full h-full object-cover rounded-l-3xl" />
+                    </div>
+                    <div class="flex-1 flex flex-col justify-center items-center p-6">
+                        <p id="testimonial-text" class="text-lg sm:text-xl text-blue-900 font-semibold mb-4 leading-snug text-center"></p>
+                        <div id="testimonial-dots" class="flex justify-center items-center gap-2 mt-3"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script>
+        // Social Proof Rotator
+        const testimonials = [
+            {
+                text: "I had a fantastic time at the conference. I had a genuinely great time and met a lot of interesting people."
+            },
+            {
+                text: "As an engineering student, I found it crucial to explore AI concepts, a current topic that everyone discusses without truly understanding its fundamentals. Regardless of which engineering field I pursue in the future, I know AI will be an essential tool."
+            },
+            {
+                text: "The school's content was very appropriate and rich in learning for this theme on generative AI."
+            },
+            {
+                text: "The spring school allowed me to understand generative AI and its challenges. I found it very instructive to be able to exchange with participants and experts, to understand their perception of AI. The practical work was beneficial, and the topics we worked on were super interesting and allowed us to put ourselves in concrete situations!"
+            },
+            {
+                text: "As a novice, I understood how AI works, how it's built, its limitations, and how to address concerns and preconceived ideas with the right arguments. I'll be able to implement something simple that uses AI. I enjoyed the environment and it made me want to explore the subject further."
+            },
+            {
+                text: "I really appreciated the interventions of renowned experts as well as the practical work, particularly the skills acquired in machine learning models."
+            },
+            {
+                text: "As a PhD student, I find that with this spring school, we can do innovative things around societal topics, technological subjects, and innovation."
+            }
+        ];
+
+        let testimonialIndex = 0;
+
+        function showTestimonial(idx) {
+            const textEl = document.getElementById('testimonial-text');
+            textEl.classList.remove('opacity-100');
+            textEl.classList.add('opacity-0', 'transition-opacity', 'duration-500');
+            setTimeout(() => {
+                textEl.textContent = testimonials[idx].text;
+                textEl.classList.remove('opacity-0');
+                textEl.classList.add('opacity-100');
+            }, 400);
+            // Render dots
+            const dotsContainer = document.getElementById('testimonial-dots');
+            dotsContainer.innerHTML = '';
+            testimonials.forEach((_, i) => {
+                const dot = document.createElement('span');
+                dot.className = `inline-block w-3 h-3 rounded-full transition-all duration-300 ${i === idx ? 'bg-blue-600 scale-110' : 'bg-blue-200'}`;
+                dotsContainer.appendChild(dot);
+            });
+        }
+
+        // Ensure initial state is visible
+        document.addEventListener('DOMContentLoaded', function() {
+            const textEl = document.getElementById('testimonial-text');
+            textEl.classList.add('opacity-100', 'transition-opacity', 'duration-500');
+            showTestimonial(testimonialIndex);
+        });
+
+        setInterval(() => {
+            testimonialIndex = (testimonialIndex + 1) % testimonials.length;
+            showTestimonial(testimonialIndex);
+        }, 6000); // 6 seconds
+        </script>
+
+        <!-- Sponsors Section -->
+        <section id="sponsors" class="w-full bg-blue-600 py-24 px-4 sm:px-6 lg:px-8" data-aos="fade-up">
+            <div class="max-w-6xl mx-auto flex flex-col items-center">
+                <div class="text-2xl font-bold text-blue-200 mb-2 text-center uppercase tracking-wide">Introducing our</div>
+                <h2 class="text-5xl sm:text-6xl font-extrabold text-white mb-8 text-center">2025 Sponsors</h2>
+                <p class="max-w-3xl mx-auto text-center text-lg text-blue-100 font-medium mb-12">
+                    As a sponsor, you'll gain exclusive access to engage with leading AI researchers and thought leaders, aligning your brand with their expertise and reputation. It's a unique opportunity to elevate your visibility, strengthen your network, and advance your thought leadership goals. Explore a snapshot of this year's sponsors below.
+                </p>
+                <div class="flex flex-wrap justify-center gap-8 mb-12 w-full">
+                    <div class="bg-white rounded-2xl shadow-lg flex items-center justify-center p-6 w-48 h-28">
+                        <img src="assets/images/sponsors/soft_centre.jpg" alt="Soft Centre" class="object-contain h-full w-full" />
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-lg flex items-center justify-center p-6 w-48 h-28">
+                        <img src="assets/images/sponsors/Logo_IMT_Nord_Europe.png" alt="IMT Nord Europe" class="object-contain h-full w-full" />
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-lg flex items-center justify-center p-6 w-48 h-28">
+                        <img src="assets/images/sponsors/Logo_ANRT.jpg" alt="ANRT" class="object-contain h-full w-full" />
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-lg flex items-center justify-center p-6 w-48 h-28">
+                        <img src="assets/images/sponsors/Logo_inpt.png" alt="INPT" class="object-contain h-full w-full" />
+                    </div>
+                </div>
+                <a href="contact.html" class="inline-block bg-white text-blue-700 text-2xl font-extrabold px-10 py-4 rounded-xl shadow-lg hover:bg-blue-700 hover:text-white transition-colors duration-200 mt-4 border-2 border-white hover:border-blue-700">Become a sponsor</a>
+            </div>
+        </section>
+
+        <!-- Videotheque Section -->
+        <section class="w-full bg-blue-50 py-24 px-4 sm:px-6 lg:px-8" data-aos="fade-up">
+            <div class="max-w-4xl mx-auto flex flex-col items-center">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-blue-900 mb-6 text-center">Videotheque</h2>
+                <p class="text-lg text-gray-700 mb-10 text-center max-w-2xl">Relive the highlights from our previous edition! Watch the recap video below to experience the energy, insights, and community that make our AI Summer School truly unique.</p>
+                <div class="w-full aspect-w-16 aspect-h-9 bg-gray-200 rounded-2xl shadow-lg overflow-hidden flex items-center justify-center">
+                    <!-- Replace the src below with the actual YouTube video ID from last edition -->
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="AI Summer School 2024 Recap" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Venue Section -->
+        <section id="venue" class="w-full bg-blue-50 py-20 px-4 sm:px-6 lg:px-8" data-aos="fade-up">
+            <div class="max-w-4xl mx-auto flex flex-col items-center">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-blue-900 mb-6 text-center">Venue</h2>
+                <p class="text-lg text-gray-700 mb-8 text-center max-w-2xl">The summer school will take place in the heart of the beautiful city of Rabat, at the Institut National des Postes et Télécommunications (INPT).</p>
+                <div class="w-full rounded-2xl shadow-lg overflow-hidden flex items-center justify-center" style="min-height:320px;">
+                    <iframe
+                        src="https://www.google.com/maps?q=Institut+National+des+Postes+et+Télécommunications,+Rabat,+Morocco&output=embed"
+                        width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        title="INPT Rabat Location"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Save the Date Section -->
+        <section class="w-full bg-blue-600 py-32 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center" data-aos="fade-up">
+            <div class="max-w-3xl mx-auto flex flex-col items-center">
+                <h2 class="text-5xl sm:text-6xl font-extrabold text-white mb-8 text-center">Save the Date!</h2>
+                <div class="text-3xl sm:text-4xl font-extrabold text-white mb-4 text-center">September 08 - 12, 2025</div>
+                <div class="text-2xl sm:text-3xl font-extrabold text-white mb-10 text-center">Institut National des Postes et Télécommunications<br>Rabat</div>
+                <a
+                    href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=AI+Summer+School%3A+Multimodal+Foundation+Models+and+Generative+AI&dates=20250908T080000Z/20250912T170000Z&details=Join+us+for+the+AI+Summer+School+at+INPT+Rabat%2C+Morocco%21+Learn+from+experts%2C+participate+in+hands-on+labs%2C+and+network+with+AI+enthusiasts.&location=Institut+National+des+Postes+et+Télécommunications%2C+Rabat%2C+Morocco"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-3 bg-white text-blue-700 text-2xl font-extrabold px-10 py-4 rounded-xl shadow-lg border-2 border-white hover:bg-blue-700 hover:text-white hover:border-blue-700 transition-colors duration-200 mt-4"
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect x="3" y="4" width="18" height="16" rx="2" fill="#3B82F6"/><rect x="7" y="8" width="10" height="2" rx="1" fill="#fff"/><rect x="7" y="12" width="6" height="2" rx="1" fill="#fff"/></svg>
+                    ADD TO CALENDAR
+                </a>
+            </div>
+        </section>
+
+        <script>
+        // Animated Background Effect
+        class Orb {
+            constructor(canvas) {
+                this.canvas = canvas;
+                this.ctx = canvas.getContext('2d');
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.radius = 50 + Math.random() * 100;
+                this.dx = (Math.random() - 0.5) * 0.5;
+                this.dy = (Math.random() - 0.5) * 0.5;
+                this.phase = Math.random() * Math.PI * 2;
+                this.color = `rgba(59, 130, 246, ${0.2 + Math.random() * 0.15})`; // Darker blue color
+            }
+
+            update() {
+                // Update position
+                this.x += this.dx;
+                this.y += this.dy;
+
+                // Bounce off edges
+                if (this.x < 0 || this.x > this.canvas.width) this.dx *= -1;
+                if (this.y < 0 || this.y > this.canvas.height) this.dy *= -1;
+
+                // Update phase for pulsing effect
+                this.phase += 0.02;
+                const pulse = Math.sin(this.phase) * 0.1 + 0.9;
+                this.currentRadius = this.radius * pulse;
+            }
+
+            draw() {
+                const gradient = this.ctx.createRadialGradient(
+                    this.x, this.y, 0,
+                    this.x, this.y, this.currentRadius
+                );
+                gradient.addColorStop(0, this.color);
+                gradient.addColorStop(1, 'rgba(59, 130, 246, 0)');
+
+                this.ctx.beginPath();
+                this.ctx.arc(this.x, this.y, this.currentRadius, 0, Math.PI * 2);
+                this.ctx.fillStyle = gradient;
+                this.ctx.fill();
+            }
+        }
+
+        class AnimatedBackground {
+            constructor() {
+                this.canvas = document.getElementById('animated-bg');
+                this.ctx = this.canvas.getContext('2d');
+                this.orbs = [];
+                this.numOrbs = 32; // Doubled the number of orbs again
+                this.init();
+            }
+
+            init() {
+                this.resize();
+                window.addEventListener('resize', () => this.resize());
+
+                // Create orbs
+                for (let i = 0; i < this.numOrbs; i++) {
+                    this.orbs.push(new Orb(this.canvas));
+                }
+
+                this.animate();
+            }
+
+            resize() {
+                const section = this.canvas.parentElement;
+                this.canvas.width = section.offsetWidth;
+                this.canvas.height = section.offsetHeight;
+            }
+
+            animate() {
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+                // Update and draw each orb
+                this.orbs.forEach(orb => {
+                    orb.update();
+                    orb.draw();
+                });
+
+                requestAnimationFrame(() => this.animate());
+            }
+        }
+
+        // Initialize the animated background when the page loads
+        window.addEventListener('load', () => {
+            new AnimatedBackground();
+        });
+        </script>
+
+        <!-- Footer Section -->
+        <footer class="w-full bg-blue-950 pt-16 pb-8 px-4 sm:px-6 lg:px-8 mt-0">
+            <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12 md:gap-0">
+                <div>
+                    <h3 class="text-white text-xl font-bold mb-6">AI Spring School</h3>
+                    <ul class="space-y-3">
+                        <li><a href="course.html" class="text-blue-100 text-lg font-bold tracking-wide hover:underline">School Course</a></li>
+                        <li><a href="speakers.html" class="text-blue-100 text-lg font-bold tracking-wide hover:underline">Speakers</a></li>
+                        <li><a href="index.html#sponsors" class="text-blue-100 text-lg font-bold tracking-wide hover:underline">Sponsors</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white text-xl font-bold mb-6">Explore</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html#venue" class="text-blue-100 text-lg font-bold tracking-wide hover:underline">Venue</a></li>
+                        <li><a href="dates.html" class="text-blue-100 text-lg font-bold tracking-wide hover:underline">Important Dates</a></li>
+                        <li><a href="registration.html" class="text-blue-100 text-lg font-bold tracking-wide hover:underline">Registration Info</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white text-xl font-bold mb-6">Support</h3>
+                    <ul class="space-y-3">
+                        <li><a href="contact.html" class="text-blue-100 text-lg font-bold tracking-wide hover:underline">Contact Us</a></li>
+                        <li><a href="privacy.html" class="text-blue-100 text-lg font-bold tracking-wide hover:underline">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 text-center">
+                <p class="text-blue-100 text-xl font-bold">Copyright© 2025 Institut National des Postes et Télécommunications. All Rights Reserved</p>
+            </div>
+        </footer>
+        <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+        <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true
+        });
+        // Animated Counters for Experience Section
+        function animateCounter(el, target, duration = 1200) {
+            let start = 0;
+            let startTime = null;
+            function updateCounter(timestamp) {
+                if (!startTime) startTime = timestamp;
+                const progress = Math.min((timestamp - startTime) / duration, 1);
+                const value = Math.floor(progress * target);
+                el.textContent = value;
+                if (progress < 1) {
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    el.textContent = target;
+                }
+            }
+            requestAnimationFrame(updateCounter);
+        }
+        // IntersectionObserver to trigger counters
+        document.addEventListener('DOMContentLoaded', function() {
+            const counters = document.querySelectorAll('.counter');
+            let triggered = false;
+            if (counters.length) {
+                const observer = new window.IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting && !triggered) {
+                            triggered = true;
+                            counters.forEach(counter => {
+                                animateCounter(counter, parseInt(counter.getAttribute('data-target'), 10));
+                            });
+                            observer.disconnect();
+                        }
+                    });
+                }, { threshold: 0.4 });
+                observer.observe(counters[0].closest('section'));
+            }
+        });
+        // Smooth scroll for venue and sponsors links
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('a[href="index.html#venue"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname === '/index.html') {
+                        e.preventDefault();
+                        document.getElementById('venue').scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+            document.querySelectorAll('a[href="index.html#sponsors"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname === '/index.html') {
+                        e.preventDefault();
+                        document.getElementById('sponsors').scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        });
+        </script>
+        <script>
+        // Parallax effect for hero text and logos
+        window.addEventListener('scroll', function() {
+            const hero = document.getElementById('hero-section');
+            const title = document.getElementById('hero-title');
+            const logos = document.getElementById('hero-logos');
+            if (!hero || !title || !logos) return;
+            const rect = hero.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            // Only apply parallax when hero is in view
+            if (rect.bottom > 0 && rect.top < windowHeight) {
+                const scrollY = Math.max(0, -rect.top);
+                // Move title and logos at different, slow rates
+                title.style.transform = `translateY(${scrollY * 0.15}px)`;
+                logos.style.transform = `translateY(${scrollY * 0.10}px)`;
+            }
+        });
+        </script>
+        <script>
+        // Highlight active nav link
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => {
+                if (window.location.pathname.endsWith(link.getAttribute('href'))) {
+                    link.classList.add('active-nav');
+                }
+            });
+            // Smooth scroll for venue and sponsors links
+            document.querySelectorAll('a[href="index.html#venue"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname === '/index.html') {
+                        e.preventDefault();
+                        document.getElementById('venue').scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+            document.querySelectorAll('a[href="index.html#sponsors"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname === '/index.html') {
+                        e.preventDefault();
+                        document.getElementById('sponsors').scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        });
+        </script>
+    </body>
+</html>

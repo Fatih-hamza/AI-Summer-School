@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Course - AI Summer School</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-md fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="text-xl font-bold text-blue-600">AI Summer School</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="speakers.html" class="text-gray-600 hover:text-blue-600 transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300">Speakers</a>
+                    <a href="course.html" class="text-blue-600 relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-blue-600">School Course</a>
+                    <a href="dates.html" class="text-gray-600 hover:text-blue-600 transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300">Important Dates</a>
+                    <a href="registration.html" class="text-gray-600 hover:text-blue-600 transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300">Registration Info</a>
+                    <a href="apply.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200">Apply Now</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main class="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+        <!-- Technical Curriculum Highlights -->
+        <section class="max-w-5xl mx-auto mb-20">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-blue-900 mb-10" style="font-family: 'Inter', serif;">Technical Curriculum Highlights</h2>
+            <div class="flex flex-col md:flex-row gap-6 md:gap-4">
+                <div class="flex-1 bg-gray-100 rounded-l-2xl md:rounded-l-2xl md:rounded-r-none flex flex-col items-center py-8 px-4 md:px-0">
+                    <span class="mb-4">
+                        <!-- Brain Icon -->
+                        <svg class="h-8 w-8 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7a5 5 0 00-9 4v1a5 5 0 005 5h1m4-10a5 5 0 019 4v1a5 5 0 01-5 5h-1"/></svg>
+                    </span>
+                    <h3 class="font-bold text-lg text-blue-900 mb-1">Foundation Models</h3>
+                    <p class="text-gray-700 text-center">Architecture and applications of modern LLMs</p>
+                </div>
+                <div class="flex-1 bg-gray-100 flex flex-col items-center py-8 px-4 md:px-0 md:border-l-4 border-white">
+                    <span class="mb-4">
+                        <!-- Code Icon -->
+                        <svg class="h-8 w-8 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+                    </span>
+                    <h3 class="font-bold text-lg text-blue-900 mb-1">Hands-on Labs</h3>
+                    <p class="text-gray-700 text-center">Implementation using Hugging Face frameworks</p>
+                </div>
+                <div class="flex-1 bg-gray-100 flex flex-col items-center py-8 px-4 md:px-0 md:border-l-4 border-white">
+                    <span class="mb-4">
+                        <!-- Image Icon -->
+                        <svg class="h-8 w-8 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                    </span>
+                    <h3 class="font-bold text-lg text-blue-900 mb-1">Diffusion Models</h3>
+                    <p class="text-gray-700 text-center">State-of-the-art image generation techniques</p>
+                </div>
+                <div class="flex-1 bg-gray-100 rounded-r-2xl md:rounded-r-2xl md:rounded-l-none flex flex-col items-center py-8 px-4 md:px-0 md:border-l-4 border-white">
+                    <span class="mb-4">
+                        <!-- Chart Icon -->
+                        <svg class="h-8 w-8 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 17v-2a4 4 0 014-4h14"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 13v-2a4 4 0 014-4h10"/></svg>
+                    </span>
+                    <h3 class="font-bold text-lg text-blue-900 mb-1">Advanced Methods</h3>
+                    <p class="text-gray-700 text-center">Optimization and uncertainty quantification</p>
+                </div>
+            </div>
+        </section>
+        <!-- Specialized Research Tracks -->
+        <section class="max-w-5xl mx-auto mb-20">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-blue-900 mb-16 mt-16">Specialized Research Tracks</h2>
+            <div class="flex flex-col items-center">
+                <!-- Pyramid -->
+                <div class="w-full max-w-xl mx-auto mb-16 mt-8">
+                    <div class="relative flex flex-col gap-4" style="height: 330px;">
+                        <!-- Top -->
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-2/3 h-20 bg-blue-100 rounded-t-lg flex items-center px-8 py-6 border-b border-blue-200" style="top:0;">
+                            <span class="mr-4"><svg class="h-7 w-7 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg></span>
+                            <div class="pl-2">
+                                <div class="font-bold text-lg text-blue-900">Advances in Arabic NLP</div>
+                                <div class="text-gray-700 text-sm">Cutting-edge research in language technologies for Arabic</div>
+                            </div>
+                        </div>
+                        <!-- Middle -->
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-5/6 h-20 bg-blue-100 flex items-center px-8 py-6 border-b border-blue-200" style="top:90px;">
+                            <span class="mr-4"><svg class="h-7 w-7 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M12 21C6.477 21 2 16.523 2 11V7a5 5 0 0110 0v4c0 5.523-4.477 10-10 10z"/><path d="M12 21c5.523 0 10-4.477 10-10V7a5 5 0 00-10 0v4c0 5.523 4.477 10 10 10z"/></svg></span>
+                            <div class="pl-2">
+                                <div class="font-bold text-lg text-blue-900">ML for Medical Imaging</div>
+                                <div class="text-gray-700 text-sm">AI applications transforming healthcare diagnostics</div>
+                            </div>
+                        </div>
+                        <!-- Bottom -->
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-full h-20 bg-blue-100 rounded-b-lg flex items-center px-8 py-6" style="top:180px;">
+                            <span class="mr-4"><svg class="h-7 w-7 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M9 12h6"/><path d="M12 9v6"/></svg></span>
+                            <div class="pl-2">
+                                <div class="font-bold text-lg text-blue-900">Small Language Modeling</div>
+                                <div class="text-gray-700 text-sm">Efficient AI systems for resource-constrained environments</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-gray-700 text-base max-w-3xl mx-auto mt-12">
+                    <p class="mb-4">Our specialized tracks offer deep dives into some of the most promising areas of AI research with particular relevance to Morocco and the region. Participants can focus on areas aligned with their interests and career goals, learning from researchers at the cutting edge of these fields.</p>
+                    <p>Each track combines theoretical foundations with practical applications, ensuring participants gain both depth of understanding and hands-on experience with tools and techniques they can immediately apply to their own work.</p>
+                </div>
+            </div>
+        </section>
+        <!-- Program Agenda -->
+        <section class="max-w-5xl mx-auto mb-20">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-blue-900 mb-10 text-center">Program Agenda</h2>
+            <div class="flex flex-col items-center">
+                <!-- Tabs -->
+                <div class="flex flex-row justify-center gap-4 mb-8">
+                    <button class="agenda-tab rounded-full px-8 py-3 text-lg font-bold focus:outline-none transition-colors duration-200 bg-blue-100 text-blue-900" data-day="1">Day 1</button>
+                    <button class="agenda-tab rounded-full px-8 py-3 text-lg font-bold focus:outline-none transition-colors duration-200 bg-blue-100 text-blue-900" data-day="2">Day 2</button>
+                    <button class="agenda-tab rounded-full px-8 py-3 text-lg font-bold focus:outline-none transition-colors duration-200 bg-blue-100 text-blue-900" data-day="3">Day 3</button>
+                    <button class="agenda-tab rounded-full px-8 py-3 text-lg font-bold focus:outline-none transition-colors duration-200 bg-blue-100 text-blue-900" data-day="4">Day 4</button>
+                    <button class="agenda-tab rounded-full px-8 py-3 text-lg font-bold focus:outline-none transition-colors duration-200 bg-blue-100 text-blue-900" data-day="5">Day 5</button>
+                </div>
+                <!-- Agenda Content -->
+                <div id="agenda-content" class="w-full">
+                    <!-- Day 1 Agenda (default) -->
+                    <div class="agenda-day" data-day="1">
+                        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+                            <!-- Session 1 -->
+                            <div class="flex items-center gap-6 mb-6">
+                                <img src="assets/images/speakers/stefano.png" alt="Speaker" class="h-16 w-16 rounded-full object-cover border-2 border-blue-200" />
+                                <div class="flex-1">
+                                    <div class="font-bold text-blue-900 text-lg mb-1">Welcome & Registration</div>
+                                    <div class="text-blue-700 text-sm mb-1">Event Host, AI Summer School</div>
+                                    <div class="text-gray-700 text-base">09:00 - 09:30</div>
+                                </div>
+                            </div>
+                            <hr class="border-blue-200 mb-6" />
+                            <!-- Session 2 -->
+                            <div class="flex items-center gap-6 mb-6">
+                                <img src="assets/images/speakers/naima.JPG" alt="Speaker" class="h-16 w-16 rounded-full object-cover border-2 border-blue-200" />
+                                <div class="flex-1">
+                                    <div class="font-bold text-blue-900 text-lg mb-1">Keynote: The Future of Foundation Models</div>
+                                    <div class="text-blue-700 text-sm mb-1">Professor of AI, University of Rabat</div>
+                                    <div class="text-gray-700 text-base">09:30 - 10:30</div>
+                                </div>
+                            </div>
+                            <hr class="border-blue-200 mb-6" />
+                            <!-- Session 3 -->
+                            <div class="flex items-center gap-6 mb-6">
+                                <img src="assets/images/speakers/PHOTO-benhamou.jpg" alt="Speaker" class="h-16 w-16 rounded-full object-cover border-2 border-blue-200" />
+                                <div class="flex-1">
+                                    <div class="font-bold text-blue-900 text-lg mb-1">Technical Session: LLM Architectures</div>
+                                    <div class="text-blue-700 text-sm mb-1">AI Researcher, MoroccoAI</div>
+                                    <div class="text-gray-700 text-base">10:45 - 12:00</div>
+                                </div>
+                            </div>
+                            <hr class="border-blue-200 mb-6" />
+                            <!-- Session 4 -->
+                            <div class="flex items-center gap-6 mb-6">
+                                <img src="assets/images/speakers/antitza.jpg" alt="Speaker" class="h-16 w-16 rounded-full object-cover border-2 border-blue-200" />
+                                <div class="flex-1">
+                                    <div class="font-bold text-blue-900 text-lg mb-1">Lunch & Networking</div>
+                                    <div class="text-blue-700 text-sm mb-1">All Participants</div>
+                                    <div class="text-gray-700 text-base">12:00 - 13:30</div>
+                                </div>
+                            </div>
+                            <hr class="border-blue-200 mb-6" />
+                            <!-- Session 5 -->
+                            <div class="flex items-center gap-6 mb-6">
+                                <img src="assets/images/speakers/chopin.jpg" alt="Speaker" class="h-16 w-16 rounded-full object-cover border-2 border-blue-200" />
+                                <div class="flex-1">
+                                    <div class="font-bold text-blue-900 text-lg mb-1">Hands-on Lab: Working with Hugging Face</div>
+                                    <div class="text-blue-700 text-sm mb-1">ML Engineer, Hugging Face</div>
+                                    <div class="text-gray-700 text-base">13:30 - 15:00</div>
+                                </div>
+                            </div>
+                            <hr class="border-blue-200 mb-6" />
+                            <!-- Session 6 -->
+                            <div class="flex items-center gap-6">
+                                <img src="assets/images/speakers/OmarSOUISSI.jpg" alt="Speaker" class="h-16 w-16 rounded-full object-cover border-2 border-blue-200" />
+                                <div class="flex-1">
+                                    <div class="font-bold text-blue-900 text-lg mb-1">Panel: AI in Morocco</div>
+                                    <div class="text-blue-700 text-sm mb-1">Panelists: Industry & Academia</div>
+                                    <div class="text-gray-700 text-base">15:15 - 17:00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Day 2 Agenda -->
+                    <div class="agenda-day hidden" data-day="2">
+                        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+                            <div class="flex items-center gap-6 mb-6">
+                                <img src="assets/images/speakers/mubarak_shah.jpg" alt="Speaker" class="h-16 w-16 rounded-full object-cover border-2 border-blue-200" />
+                                <div class="flex-1">
+                                    <div class="font-bold text-blue-900 text-lg mb-1">Technical Session: Multimodal AI</div>
+                                    <div class="text-blue-700 text-sm mb-1">AI Scientist, Multimodal Research Lab</div>
+                                    <div class="text-gray-700 text-base">09:00 - 10:30</div>
+                                </div>
+                            </div>
+                            <hr class="border-blue-200 mb-6" />
+                            <div class="flex items-center gap-6 mb-6">
+                                <img src="assets/images/speakers/nicu_sebe.png" alt="Speaker" class="h-16 w-16 rounded-full object-cover border-2 border-blue-200" />
+                                <div class="flex-1">
+                                    <div class="font-bold text-blue-900 text-lg mb-1">Workshop: Building Vision-Language Models</div>
+                                    <div class="text-blue-700 text-sm mb-1">Vision-Language Specialist, MoroccoAI</div>
+                                    <div class="text-gray-700 text-base">10:45 - 12:00</div>
+                                </div>
+                            </div>
+                            <hr class="border-blue-200 mb-6" />
+                            <div class="flex items-center gap-6 mb-6">
+                                <img src="assets/images/speakers/mohamed_daoudi.png" alt="Speaker" class="h-16 w-16 rounded-full object-cover border-2 border-blue-200" />
+                                <div class="flex-1">
+                                    <div class="font-bold text-blue-900 text-lg mb-1">Lunch & Networking</div>
+                                    <div class="text-blue-700 text-sm mb-1">All Participants</div>
+                                    <div class="text-gray-700 text-base">12:00 - 13:30</div>
+                                </div>
+                            </div>
+                            <hr class="border-blue-200 mb-6" />
+                            <div class="flex items-center gap-6 mb-6">
+                                <img src="assets/images/speakers/del_bimbo.jpeg" alt="Speaker" class="h-16 w-16 rounded-full object-cover border-2 border-blue-200" />
+                                <div class="flex-1">
+                                    <div class="font-bold text-blue-900 text-lg mb-1">Hands-on Lab: Multimodal Applications</div>
+                                    <div class="text-blue-700 text-sm mb-1">ML Engineer, MoroccoAI</div>
+                                    <div class="text-gray-700 text-base">13:30 - 15:00</div>
+                                </div>
+                            </div>
+                            <hr class="border-blue-200 mb-6" />
+                            <div class="flex items-center gap-6">
+                                <img src="assets/images/speakers/speaker1.jpg" alt="Speaker" class="h-16 w-16 rounded-full object-cover border-2 border-blue-200" />
+                                <div class="flex-1">
+                                    <div class="font-bold text-blue-900 text-lg mb-1">Panel: The Future of Multimodal AI</div>
+                                    <div class="text-blue-700 text-sm mb-1">Panelists: Industry & Academia</div>
+                                    <div class="text-gray-700 text-base">15:15 - 17:00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Day 3 Agenda -->
+                    <div class="agenda-day hidden" data-day="3">
+                        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+                            <div class="flex items-center gap-6 mb-6">
+                                <img src="assets/images/speakers/speaker2.jpg" alt="Speaker" class="h-16 w-16 rounded-full object-cover border-2 border-blue-200" />
+                                <div class="flex-1">
+                                    <div class="font-bold text-blue-900 text-lg mb-1">Technical Session: Generative AI</div>
+                                    <div class="text-blue-700 text-sm mb-1">Generative AI Lead, MoroccoAI</div>
+                                    <div class="text-gray-700 text-base">09:00 - 10:30</div>
+                                </div>
+                            </div>
+                            <hr class="border-blue-200 mb-6" />
+                            <div class="flex items-center gap-6 mb-6">
+                                <img src="assets/images/speakers/stefano.png" alt="Speaker" class="h-16 w-16 rounded-full object-cover border-2 border-blue-200" />
+                                <div class="flex-1">
+                                    <div class="font-bold text-blue-900 text-lg mb-1">Workshop: Diffusion Models</div>
+                                    <div class="text-blue-700 text-sm mb-1">Diffusion Model Expert, University of Rabat</div>
+                                    <div class="text-gray-700 text-base">10:45 - 12:00</div>
+                                </div>
+                            </div>
+                            <hr class="border-blue-200 mb-6" />
+                            <div class="flex items-center gap-6 mb-6">
+                                <img src="assets/images/speakers/naima.JPG" alt="Speaker" class="h-16 w-16 rounded-full object-cover border-2 border-blue-200" />
+                                <div class="flex-1">
+                                    <div class="font-bold text-blue-900 text-lg mb-1">Lunch & Networking</div>
+                                    <div class="text-blue-700 text-sm mb-1">All Participants</div>
+                                    <div class="text-gray-700 text-base">12:00 - 13:30</div>
+                                </div>
+                            </div>
+                            <hr class="border-blue-200 mb-6" />
+                            <div class="flex items-center gap-6 mb-6">
+                                <img src="assets/images/speakers/PHOTO-benhamou.jpg" alt="Speaker" class="h-16 w-16 rounded-full object-cover border-2 border-blue-200" />
+                                <div class="flex-1">
+                                    <div class="font-bold text-blue-900 text-lg mb-1">Hands-on Lab: Generative AI Tools</div>
+                                    <div class="text-blue-700 text-sm mb-1">AI Engineer, MoroccoAI</div>
+                                    <div class="text-gray-700 text-base">13:30 - 15:00</div>
+                                </div>
+                            </div>
+                            <hr class="border-blue-200 mb-6" />
+                            <div class="flex items-center gap-6">
+                                <img src="assets/images/speakers/antitza.jpg" alt="Speaker" class="h-16 w-16 rounded-full object-cover border-2 border-blue-200" />
+                                <div class="flex-1">
+                                    <div class="font-bold text-blue-900 text-lg mb-1">Panel: Ethics in Generative AI</div>
+                                    <div class="text-blue-700 text-sm mb-1">Panelists: Industry & Academia</div>
+                                    <div class="text-gray-700 text-base">15:15 - 17:00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Day 4 Agenda -->
+                    <div class="agenda-day hidden" data-day="4">
+                        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+                            <div class="flex items-center gap-6 mb-6">
+                                <img src="assets/images/speakers/chopin.jpg" alt="Speaker" class="h-16 w-16 rounded-full object-cover border-2 border-blue-200" />
+                                <div class="flex-1">
+                                    <div class="font-bold text-blue-900 text-lg mb-1">Technical Session: Advanced Methods</div>
+                                    <div class="text-blue-700 text-sm mb-1">Optimization Expert, MoroccoAI</div>
+                                    <div class="text-gray-700 text-base">09:00 - 10:30</div>
+                                </div>
+                            </div>
+                            <hr class="border-blue-200 mb-6" />
+                            <div class="flex items-center gap-6 mb-6">
+                                <img src="assets/images/speakers/OmarSOUISSI.jpg" alt="Speaker" class="h-16 w-16 rounded-full object-cover border-2 border-blue-200" />
+                                <div class="flex-1">
+                                    <div class="font-bold text-blue-900 text-lg mb-1">Workshop: Optimization & Uncertainty</div>
+                                    <div class="text-blue-700 text-sm mb-1">Uncertainty Quantification Specialist, University of Rabat</div>
+                                    <div class="text-gray-700 text-base">10:45 - 12:00</div>
+                                </div>
+                            </div>
+                            <hr class="border-blue-200 mb-6" />
+                            <div class="flex items-center gap-6 mb-6">
+                                <img src="assets/images/speakers/mubarak_shah.jpg" alt="Speaker" class="h-16 w-16 rounded-full object-cover border-2 border-blue-200" />
+                                <div class="flex-1">
+                                    <div class="font-bold text-blue-900 text-lg mb-1">Lunch & Networking</div>
+                                    <div class="text-blue-700 text-sm mb-1">All Participants</div>
+                                    <div class="text-gray-700 text-base">12:00 - 13:30</div>
+                                </div>
+                            </div>
+                            <hr class="border-blue-200 mb-6" />
+                            <div class="flex items-center gap-6 mb-6">
+                                <img src="assets/images/speakers/nicu_sebe.png" alt="Speaker" class="h-16 w-16 rounded-full object-cover border-2 border-blue-200" />
+                                <div class="flex-1">
+                                    <div class="font-bold text-blue-900 text-lg mb-1">Hands-on Lab: Model Deployment</div>
+                                    <div class="text-blue-700 text-sm mb-1">Deployment Engineer, MoroccoAI</div>
+                                    <div class="text-gray-700 text-base">13:30 - 15:00</div>
+                                </div>
+                            </div>
+                            <hr class="border-blue-200 mb-6" />
+                            <div class="flex items-center gap-6">
+                                <img src="assets/images/speakers/speaker1.jpg" alt="Speaker" class="h-16 w-16 rounded-full object-cover border-2 border-blue-200" />
+                                <div class="flex-1">
+                                    <div class="font-bold text-blue-900 text-lg mb-1">Panel: AI for Social Good</div>
+                                    <div class="text-blue-700 text-sm mb-1">Panelists: Industry & Academia</div>
+                                    <div class="text-gray-700 text-base">15:15 - 17:00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Day 5 Agenda -->
+                    <div class="agenda-day hidden" data-day="5">
+                        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+                            <div class="flex items-center gap-6 mb-6">
+                                <img src="assets/images/speakers/speaker2.jpg" alt="Speaker" class="h-16 w-16 rounded-full object-cover border-2 border-blue-200" />
+                                <div class="flex-1">
+                                    <div class="font-bold text-blue-900 text-lg mb-1">Group Project Work & Mentoring</div>
+                                    <div class="text-blue-700 text-sm mb-1">Mentors: Faculty & Industry Experts</div>
+                                    <div class="text-gray-700 text-base">09:00 - 12:00</div>
+                                </div>
+                            </div>
+                            <hr class="border-blue-200 mb-6" />
+                            <div class="flex items-center gap-6 mb-6">
+                                <img src="assets/images/speakers/stefano.png" alt="Speaker" class="h-16 w-16 rounded-full object-cover border-2 border-blue-200" />
+                                <div class="flex-1">
+                                    <div class="font-bold text-blue-900 text-lg mb-1">Lunch & Networking</div>
+                                    <div class="text-blue-700 text-sm mb-1">All Participants</div>
+                                    <div class="text-gray-700 text-base">12:00 - 13:30</div>
+                                </div>
+                            </div>
+                            <hr class="border-blue-200 mb-6" />
+                            <div class="flex items-center gap-6 mb-6">
+                                <img src="assets/images/speakers/naima.JPG" alt="Speaker" class="h-16 w-16 rounded-full object-cover border-2 border-blue-200" />
+                                <div class="flex-1">
+                                    <div class="font-bold text-blue-900 text-lg mb-1">Project Presentations</div>
+                                    <div class="text-blue-700 text-sm mb-1">All Teams</div>
+                                    <div class="text-gray-700 text-base">13:30 - 15:00</div>
+                                </div>
+                            </div>
+                            <hr class="border-blue-200 mb-6" />
+                            <div class="flex items-center gap-6">
+                                <img src="assets/images/speakers/PHOTO-benhamou.jpg" alt="Speaker" class="h-16 w-16 rounded-full object-cover border-2 border-blue-200" />
+                                <div class="flex-1">
+                                    <div class="font-bold text-blue-900 text-lg mb-1">Closing Ceremony & Networking</div>
+                                    <div class="text-blue-700 text-sm mb-1">Organizing Committee</div>
+                                    <div class="text-gray-700 text-base">15:15 - 16:00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer Section -->
+    <footer class="w-full bg-blue-950 pt-16 pb-8 px-4 sm:px-6 lg:px-8 mt-0">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12 md:gap-0">
+            <div>
+                <h3 class="text-white text-xl font-bold mb-6">AI Spring School</h3>
+                <ul class="space-y-3">
+                    <li><a href="course.html" class="text-blue-400 text-lg font-bold tracking-wide hover:underline">School Course</a></li>
+                    <li><a href="speakers.html" class="text-blue-400 text-lg font-bold tracking-wide hover:underline">Speakers</a></li>
+                    <li><a href="index.html#sponsors" class="text-blue-400 text-lg font-bold tracking-wide hover:underline">Sponsors</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-white text-xl font-bold mb-6">Explore</h3>
+                <ul class="space-y-3">
+                    <li><a href="index.html#venue" class="text-blue-400 text-lg font-bold tracking-wide hover:underline">Venue</a></li>
+                    <li><a href="dates.html" class="text-blue-400 text-lg font-bold tracking-wide hover:underline">Important Dates</a></li>
+                    <li><a href="registration.html" class="text-blue-400 text-lg font-bold tracking-wide hover:underline">Registration Info</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-white text-xl font-bold mb-6">Support</h3>
+                <ul class="space-y-3">
+                    <li><a href="contact.html" class="text-blue-400 text-lg font-bold tracking-wide hover:underline">Contact Us</a></li>
+                    <li><a href="privacy.html" class="text-blue-400 text-lg font-bold tracking-wide hover:underline">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mt-12 text-center">
+            <p class="text-blue-400 text-xl font-bold">Copyright© 2025 Institut National des Postes et Télécommunications. All Rights Reserved</p>
+        </div>
+    </footer>
+    <script>
+    // Dynamic agenda tab logic
+    document.addEventListener('DOMContentLoaded', function() {
+        // Set Day 1 as active by default
+        var tabs = document.querySelectorAll('.agenda-tab');
+        tabs.forEach(t => t.classList.remove('bg-blue-600', 'text-white', 'bg-blue-100', 'text-blue-900'));
+        tabs[0].classList.add('bg-blue-600', 'text-white');
+        for (let i = 1; i < tabs.length; i++) {
+            tabs[i].classList.add('bg-blue-100', 'text-blue-900');
+        }
+        // Tab click logic
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                tabs.forEach(t => t.classList.remove('bg-blue-600', 'text-white', 'bg-blue-100', 'text-blue-900'));
+                tabs.forEach(t => t.classList.add('bg-blue-100', 'text-blue-900'));
+                this.classList.remove('bg-blue-100', 'text-blue-900');
+                this.classList.add('bg-blue-600', 'text-white');
+                document.querySelectorAll('.agenda-day').forEach(day => day.classList.add('hidden'));
+                document.querySelector('.agenda-day[data-day="' + this.dataset.day + '"]').classList.remove('hidden');
+            });
+        });
+        // Smooth scroll for venue and sponsors links
+        document.querySelectorAll('a[href="index.html#venue"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname === '/index.html') {
+                    e.preventDefault();
+                    document.getElementById('venue').scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+        document.querySelectorAll('a[href="index.html#sponsors"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname === '/index.html') {
+                    e.preventDefault();
+                    document.getElementById('sponsors').scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    });
+    </script>
+</body>
+</html> 
