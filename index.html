@@ -41,6 +41,9 @@
             color: #1e293b !important;
             font-weight: bold;
         }
+        .hero-text-shadow {
+            text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -55,10 +58,12 @@
                 
                 <!-- Navigation Links -->
                 <div class="hidden md:flex items-center space-x-8">
+                    <a href="scientific-committee.html" class="flex flex-col items-center justify-center text-center h-full text-gray-600 hover:text-blue-600 transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300"><span class="block">Scientific</span><span class="block">Committee</span></a>
                     <a href="speakers.html" class="text-gray-600 hover:text-blue-600 transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300">Speakers</a>
-                    <a href="course.html" class="text-gray-600 hover:text-blue-600 transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300">School Course</a>
-                    <a href="dates.html" class="text-gray-600 hover:text-blue-600 transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300">Important Dates</a>
-                    <a href="registration.html" class="text-gray-600 hover:text-blue-600 transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300">Registration Info</a>
+                    <a href="course.html" class="flex flex-col items-center justify-center text-center h-full text-gray-600 hover:text-blue-600 transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300"><span class="block">School</span><span class="block">Course</span></a>
+                    <a href="dates.html" class="flex flex-col items-center justify-center text-center h-full text-gray-600 hover:text-blue-600 transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300"><span class="block">Important</span><span class="block">Dates</span></a>
+                    <a href="registration.html" class="flex flex-col items-center justify-center text-center h-full text-gray-600 hover:text-blue-600 transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300"><span class="block">Registration</span><span class="block">Info</span></a>
+                    <a href="contact.html#sponsor" class="flex flex-col items-center justify-center text-center h-full text-gray-600 hover:text-blue-600 transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300"><span class="block">Become</span><span class="block">Sponsor</span></a>
                     <a href="apply.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200">Apply Now</a>
                 </div>
 
@@ -77,43 +82,62 @@
     <!-- Mobile menu panel (hidden by default) -->
     <div id="mobile-menu" class="md:hidden hidden fixed top-16 left-0 w-full bg-white shadow-lg z-50">
         <div class="flex flex-col items-center space-y-4 py-6">
+            <a href="scientific-committee.html" class="flex flex-col items-center justify-center text-center h-full text-gray-600 hover:text-blue-600"><span class="block">Scientific</span><span class="block">Committee</span></a>
             <a href="speakers.html" class="text-gray-600 hover:text-blue-600">Speakers</a>
-            <a href="course.html" class="text-gray-600 hover:text-blue-600">School Course</a>
-            <a href="dates.html" class="text-gray-600 hover:text-blue-600">Important Dates</a>
-            <a href="registration.html" class="text-gray-600 hover:text-blue-600">Registration Info</a>
+            <a href="course.html" class="flex flex-col items-center justify-center text-center h-full text-gray-600 hover:text-blue-600"><span class="block">School</span><span class="block">Course</span></a>
+            <a href="dates.html" class="flex flex-col items-center justify-center text-center h-full text-gray-600 hover:text-blue-600"><span class="block">Important</span><span class="block">Dates</span></a>
+            <a href="registration.html" class="flex flex-col items-center justify-center text-center h-full text-gray-600 hover:text-blue-600"><span class="block">Registration</span><span class="block">Info</span></a>
+            <a href="contact.html#sponsor" class="flex flex-col items-center justify-center text-center h-full text-gray-600 hover:text-blue-600"><span class="block">Become</span><span class="block">Sponsor</span></a>
             <a href="apply.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Apply Now</a>
         </div>
     </div>
 
     <!-- Hero Section -->
-    <section class="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-32 pb-16 md:pb-32 relative overflow-hidden bg-blue-50" id="hero-section">
-        <canvas id="animated-bg" class="absolute inset-0 w-full h-full pointer-events-none z-0"></canvas>
+    <section class="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-32 pb-16 md:pb-32 relative overflow-hidden" id="hero-section" style="background: url('assets/images/bg.jpg') center center / cover no-repeat;">
         <div class="max-w-4xl mx-auto text-center relative z-10">
-            <!-- Logos -->
-            <div id="hero-logos" class="flex justify-center items-center space-x-4 sm:space-x-8 mb-12 will-change-transform">
-                <img src="assets/images/logos/Logo_inpt.png" alt="INPT Logo" class="h-12 sm:h-16 md:h-20 w-auto object-contain">
-                <img src="assets/images/logos/logo_moroccoAI.png" alt="MoroccoAI Logo" class="h-12 sm:h-16 md:h-20 w-auto object-contain">
-            </div>
-            
+
             <!-- Title -->
-            <h1 id="hero-title" class="text-4xl sm:text-5xl font-bold text-blue-900 mb-8 leading-tight will-change-transform">
+            <h1 id="hero-title" class="text-4xl sm:text-5xl font-bold text-blue-900 mb-4 leading-tight will-change-transform hero-text-shadow">
                 Summer School on Multimodal Foundation Models and Generative AI
             </h1>
             
+            <!-- Date and Location -->
+            <div class="flex items-center justify-center gap-3 mb-8 hero-text-shadow">
+                <div class="flex items-center gap-2">
+                    <svg class="h-5 w-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    </svg>
+                    <span class="text-xl font-semibold text-blue-800">INPT, Rabat</span>
+                </div>
+                <div class="w-1 h-1 bg-blue-600 rounded-full"></div>
+                <div class="flex items-center gap-2">
+                    <svg class="h-5 w-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                    </svg>
+                    <span class="text-xl font-semibold text-blue-800">8 - 12 September</span>
+                </div>
+            </div>
+            
             <!-- Description -->
-            <div class="prose prose-lg mx-auto mb-12 text-gray-600">
+            <div class="prose prose-lg mx-auto mb-12 text-gray-600 hero-text-shadow">
                 <p class="mb-4">
-                    Welcome to the AI Summer School, an immersive five-day program jointly organized by MoroccoAI and Institut National Des Postes et Télécommunication (INPT). Taking place September 8-12 at INPT Rabat, this transformative experience will equip participants with cutting-edge AI knowledge and skills.
+                    Welcome to the AI Summer School, an immersive five-day program jointly organized by MoroccoAI and Institut National Des Postes et Télécommunication (INPT). This transformative experience will equip participants with cutting-edge AI knowledge and skills.
                 </p>
-                <p class="mb-8">
+                <p class="mb-8 font-bold text-blue-900">
                     Gain practical knowledge to advance Morocco's AI capabilities and your own career prospects.
                 </p>
             </div>
             
             <!-- CTA Button -->
-            <a href="apply.html" class="inline-block bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors duration-200 shadow-lg hover:shadow-xl">
-                Apply Now
-            </a>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="apply.html" class="inline-block bg-blue-900 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-800 transition-colors duration-200 shadow-lg hover:shadow-xl border-2 border-blue-900">
+                    Apply Now
+                </a>
+                <button onclick="document.getElementById('save-the-date').scrollIntoView({behavior: 'smooth'})" class="inline-block bg-white text-blue-900 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-50 transition-colors duration-200 shadow-lg hover:shadow-xl border-2 border-blue-900">
+                    Save the Date
+                </button>
+            </div>
         </div>
     </section>
 
@@ -379,10 +403,14 @@
                     <!-- Strategic Partnership -->
                     <div class="flex-1 flex flex-col items-center text-center">
                         <span class="mb-4 flex items-center justify-center">
-                            <img src="assets/images/partnership.png" alt="Partnership" class="h-12 w-auto object-contain" />
+                            <img src="assets/images/logos/soft_centre.jpg" alt="Soft Centre" class="h-12 w-auto object-contain" />
                         </span>
-                        <p class="text-gray-700">This strategic partnership brings together academic excellence and industry connections to create an unparalleled learning experience for participants and strengthen Morocco's AI ecosystem.</p>
+                        <p class="text-gray-700">Soft Centre is a software innovation hub established around 2010 that serves as a national innovation catalyst bridging academia, industry, and students to accelerate digital transformation and develop novel IT solutions in Morocco.</p>
                     </div>
+                </div>
+                <div class="w-4/5 h-px bg-gradient-to-r from-transparent via-blue-400 to-transparent mx-auto my-12"></div>
+                <div class="text-gray-700 text-base max-w-3xl mx-auto">
+                    <p>This strategic partnership brings together academic excellence and industry connections to create an unparalleled learning experience for participants and strengthen Morocco's AI ecosystem.</p>
                 </div>
             </div>
         </section>
@@ -546,19 +574,10 @@
                 </p>
                 <div class="flex flex-wrap justify-center gap-8 mb-12 w-full">
                     <div class="bg-white rounded-2xl shadow-lg flex items-center justify-center p-6 w-48 h-28">
-                        <img src="assets/images/sponsors/soft_centre.jpg" alt="Soft Centre" class="object-contain h-full w-full" />
-                    </div>
-                    <div class="bg-white rounded-2xl shadow-lg flex items-center justify-center p-6 w-48 h-28">
-                        <img src="assets/images/sponsors/Logo_IMT_Nord_Europe.png" alt="IMT Nord Europe" class="object-contain h-full w-full" />
-                    </div>
-                    <div class="bg-white rounded-2xl shadow-lg flex items-center justify-center p-6 w-48 h-28">
-                        <img src="assets/images/sponsors/Logo_ANRT.jpg" alt="ANRT" class="object-contain h-full w-full" />
-                    </div>
-                    <div class="bg-white rounded-2xl shadow-lg flex items-center justify-center p-6 w-48 h-28">
-                        <img src="assets/images/sponsors/Logo_inpt.png" alt="INPT" class="object-contain h-full w-full" />
+                        <span class="text-3xl font-extrabold text-blue-900 tracking-widest">ACM</span>
                     </div>
                 </div>
-                <a href="contact.html" class="inline-block bg-white text-blue-700 text-2xl font-extrabold px-10 py-4 rounded-xl shadow-lg hover:bg-blue-700 hover:text-white transition-colors duration-200 mt-4 border-2 border-white hover:border-blue-700">Become a sponsor</a>
+                <a href="become-sponsor.html" class="inline-block bg-white text-blue-700 text-2xl font-extrabold px-10 py-4 rounded-xl shadow-lg hover:bg-blue-700 hover:text-white transition-colors duration-200 mt-4 border-2 border-white hover:border-blue-700">Become a sponsor</a>
             </div>
         </section>
 
@@ -589,7 +608,7 @@
         </section>
 
         <!-- Save the Date Section -->
-        <section class="w-full bg-blue-600 py-32 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center" data-aos="fade-up">
+        <section id="save-the-date" class="w-full bg-blue-600 py-32 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center" data-aos="fade-up">
             <div class="max-w-3xl mx-auto flex flex-col items-center">
                 <h2 class="text-5xl sm:text-6xl font-extrabold text-white mb-8 text-center">Save the Date!</h2>
                 <div class="text-3xl sm:text-4xl font-extrabold text-white mb-4 text-center">September 08 - 12, 2025</div>
@@ -606,126 +625,44 @@
             </div>
         </section>
 
-        <script>
-        // Animated Background Effect
-        class Orb {
-            constructor(canvas) {
-                this.canvas = canvas;
-                this.ctx = canvas.getContext('2d');
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.radius = 50 + Math.random() * 100;
-                this.dx = (Math.random() - 0.5) * 0.5;
-                this.dy = (Math.random() - 0.5) * 0.5;
-                this.phase = Math.random() * Math.PI * 2;
-                this.color = `rgba(59, 130, 246, ${0.2 + Math.random() * 0.15})`; // Darker blue color
-            }
-
-            update() {
-                // Update position
-                this.x += this.dx;
-                this.y += this.dy;
-
-                // Bounce off edges
-                if (this.x < 0 || this.x > this.canvas.width) this.dx *= -1;
-                if (this.y < 0 || this.y > this.canvas.height) this.dy *= -1;
-
-                // Update phase for pulsing effect
-                this.phase += 0.02;
-                const pulse = Math.sin(this.phase) * 0.1 + 0.9;
-                this.currentRadius = this.radius * pulse;
-            }
-
-            draw() {
-                const gradient = this.ctx.createRadialGradient(
-                    this.x, this.y, 0,
-                    this.x, this.y, this.currentRadius
-                );
-                gradient.addColorStop(0, this.color);
-                gradient.addColorStop(1, 'rgba(59, 130, 246, 0)');
-
-                this.ctx.beginPath();
-                this.ctx.arc(this.x, this.y, this.currentRadius, 0, Math.PI * 2);
-                this.ctx.fillStyle = gradient;
-                this.ctx.fill();
-            }
-        }
-
-        class AnimatedBackground {
-            constructor() {
-                this.canvas = document.getElementById('animated-bg');
-                this.ctx = this.canvas.getContext('2d');
-                this.orbs = [];
-                this.numOrbs = 32; // Doubled the number of orbs again
-                this.init();
-            }
-
-            init() {
-                this.resize();
-                window.addEventListener('resize', () => this.resize());
-
-                // Create orbs
-                for (let i = 0; i < this.numOrbs; i++) {
-                    this.orbs.push(new Orb(this.canvas));
-                }
-
-                this.animate();
-            }
-
-            resize() {
-                const section = this.canvas.parentElement;
-                this.canvas.width = section.offsetWidth;
-                this.canvas.height = section.offsetHeight;
-            }
-
-            animate() {
-                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-
-                // Update and draw each orb
-                this.orbs.forEach(orb => {
-                    orb.update();
-                    orb.draw();
-                });
-
-                requestAnimationFrame(() => this.animate());
-            }
-        }
-
-        // Initialize the animated background when the page loads
-        window.addEventListener('load', () => {
-            new AnimatedBackground();
-        });
-        </script>
-
         <!-- Footer Section -->
         <footer class="w-full bg-blue-950 pt-16 pb-8 px-4 sm:px-6 lg:px-8 mt-0">
             <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12 md:gap-0">
                 <div>
                     <h3 class="text-white text-xl font-bold mb-6">AI Spring School</h3>
                     <ul class="space-y-3">
-                        <li><a href="course.html" class="text-blue-100 text-lg font-bold tracking-wide hover:underline">School Course</a></li>
-                        <li><a href="speakers.html" class="text-blue-100 text-lg font-bold tracking-wide hover:underline">Speakers</a></li>
-                        <li><a href="index.html#sponsors" class="text-blue-100 text-lg font-bold tracking-wide hover:underline">Sponsors</a></li>
+                        <li><a href="course.html" class="text-blue-400 text-lg font-bold tracking-wide hover:underline">School Course</a></li>
+                        <li><a href="speakers.html" class="text-blue-400 text-lg font-bold tracking-wide hover:underline">Speakers</a></li>
+                        <li><a href="index.html#sponsors" class="text-blue-400 text-lg font-bold tracking-wide hover:underline">Sponsors</a></li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="text-white text-xl font-bold mb-6">Explore</h3>
                     <ul class="space-y-3">
-                        <li><a href="index.html#venue" class="text-blue-100 text-lg font-bold tracking-wide hover:underline">Venue</a></li>
-                        <li><a href="dates.html" class="text-blue-100 text-lg font-bold tracking-wide hover:underline">Important Dates</a></li>
-                        <li><a href="registration.html" class="text-blue-100 text-lg font-bold tracking-wide hover:underline">Registration Info</a></li>
+                        <li><a href="index.html#venue" class="text-blue-400 text-lg font-bold tracking-wide hover:underline">Venue</a></li>
+                        <li><a href="dates.html" class="text-blue-400 text-lg font-bold tracking-wide hover:underline">Important Dates</a></li>
+                        <li><a href="registration.html" class="text-blue-400 text-lg font-bold tracking-wide hover:underline">Registration Info</a></li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="text-white text-xl font-bold mb-6">Support</h3>
                     <ul class="space-y-3">
-                        <li><a href="contact.html" class="text-blue-100 text-lg font-bold tracking-wide hover:underline">Contact Us</a></li>
-                        <li><a href="privacy.html" class="text-blue-100 text-lg font-bold tracking-wide hover:underline">Privacy Policy</a></li>
+                        <li><a href="contact.html" class="text-blue-400 text-lg font-bold tracking-wide hover:underline">Contact Us</a></li>
+                        <li><a href="privacy.html" class="text-blue-400 text-lg font-bold tracking-wide hover:underline">Privacy Policy</a></li>
                     </ul>
                 </div>
             </div>
             <div class="mt-12 text-center">
-                <p class="text-blue-100 text-xl font-bold">Copyright© 2025 Institut National des Postes et Télécommunications. All Rights Reserved</p>
+                <p class="text-blue-400 text-xl font-bold">Copyright© 2025 Institut National des Postes et Télécommunications. All Rights Reserved</p>
+                <div class="mt-12 relative">
+                    <div class="absolute left-1/2 -translate-x-1/2 -top-6 w-4/5 h-px bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
+                    <div class="flex items-center justify-center gap-2">
+                        <div class="w-8 h-px bg-blue-400"></div>
+                        <span class="text-gray-400 text-sm">Powered by</span>
+                        <a href="www.softcentre.ma" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:text-blue-400 text-sm font-medium transition-colors duration-200">Soft Centre</a>
+                        <div class="w-8 h-px bg-blue-400"></div>
+                    </div>
+                </div>
             </div>
         </footer>
         <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
