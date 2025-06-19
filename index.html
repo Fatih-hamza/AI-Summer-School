@@ -54,6 +54,14 @@
                 text-shadow: 0 2px 8px rgba(0,0,0,0.28);
             }
         }
+        @media (max-width: 767px) {
+            .about-card-mobile {
+                background: #fff;
+                border-radius: 1rem;
+                box-shadow: 0 2px 12px 0 rgba(30, 64, 175, 0.08);
+                padding: 1.5rem 1rem;
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -157,48 +165,60 @@
             <h2 class="text-3xl sm:text-4xl font-extrabold text-blue-900 mb-16 text-center tracking-tight" style="font-family: 'Inter', sans-serif;">
                 About the Summer School
             </h2>
-            <div class="relative flex flex-col md:flex-row md:items-start md:justify-center">
-                <!-- Timeline vertical line -->
+            <div class="relative w-full">
+                <!-- Timeline vertical line (hidden on mobile) -->
                 <div class="hidden md:block absolute left-1/2 top-0 h-full w-1 bg-gradient-to-b from-blue-200 via-blue-400 to-blue-200 rounded-full z-0"></div>
-                <div class="flex flex-col md:flex-row w-full md:space-x-16">
-                    <!-- Left side (In-depth Analysis, Research Opportunity) -->
-                    <div class="flex-1 flex flex-col space-y-24 md:space-y-32">
-                        <div class="flex flex-col items-center md:items-end text-center md:text-right">
+                <!-- Mobile: stack all cards in one column; Desktop: three-part layout -->
+                <div class="flex flex-col gap-4 md:flex-row md:gap-0 md:space-x-16 w-full">
+                    <!-- Mobile: all cards in one column -->
+                    <div class="flex flex-col gap-4 w-full md:w-auto md:flex-1 md:space-y-32">
+                        <div class="about-card-mobile flex flex-col items-center md:items-end text-center md:text-right">
                             <div class="text-xl font-semibold text-blue-900 mb-2">In-depth Analysis</div>
                             <div class="text-gray-700 max-w-md">
                                 Clear overview of state-of-the-art research in <span class="text-blue-600 font-medium">Multimodal Foundation Models</span> and <span class="text-blue-600 font-medium">Generative AI</span>.
                             </div>
                         </div>
-                        <div class="flex flex-col items-center md:items-end text-center md:text-right">
+                        <div class="about-card-mobile flex flex-col items-center md:items-end text-center md:text-right">
                             <div class="text-xl font-semibold text-blue-900 mb-2">Research Opportunity</div>
                             <div class="text-gray-700 max-w-md">
                                 Young researchers and Ph.D. students benefit from direct interaction with AI leaders.
                             </div>
                         </div>
-                    </div>
-                    <!-- Timeline icons -->
-                    <div class="flex flex-col items-center justify-between z-10 mx-auto md:mx-0">
-                        <div class="flex flex-col items-center space-y-24 md:space-y-32">
-                            <div class="bg-gradient-to-tr from-blue-100 to-blue-300 shadow-lg rounded-xl p-4 flex items-center justify-center mb-2">
-                                <svg class="h-8 w-8 text-blue-700 icon-animate" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422A12.083 12.083 0 0112 21.5a12.083 12.083 0 01-6.16-10.922L12 14z"/></svg>
-                            </div>
-                            <div class="bg-gradient-to-tr from-blue-100 to-blue-300 shadow-lg rounded-xl p-4 flex items-center justify-center mb-2">
-                                <svg class="h-8 w-8 text-blue-700 icon-animate" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 16h-1v-4h-1m1-4h.01M12 2a10 10 0 100 20 10 10 0 000-20z"/></svg>
-                            </div>
-                            <div class="bg-gradient-to-tr from-blue-100 to-blue-300 shadow-lg rounded-xl p-4 flex items-center justify-center mb-2">
-                                <svg class="h-8 w-8 text-blue-700 icon-animate" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H7a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Right side (Expert Instruction, Building Leadership) -->
-                    <div class="flex-1 flex flex-col space-y-24 md:space-y-32">
-                        <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                        <!-- On desktop, right cards are in a separate column -->
+                        <div class="about-card-mobile flex flex-col items-center md:hidden text-center">
                             <div class="text-xl font-semibold text-blue-900 mb-2">Expert Instruction</div>
                             <div class="text-gray-700 max-w-md">
                                 Courses delivered by world-renowned experts covering theoretical and practical aspects.
                             </div>
                         </div>
-                        <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                        <div class="about-card-mobile flex flex-col items-center md:hidden text-center">
+                            <div class="text-xl font-semibold text-blue-900 mb-2">Building Leadership</div>
+                            <div class="text-gray-700 max-w-md">
+                                <span class="text-blue-600 font-medium">Partnership</span> aims to develop the next generation of AI leaders in Morocco.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Timeline icons (hidden on mobile, visible on md+) -->
+                    <div class="hidden md:flex flex-col items-center justify-between z-10 mx-auto md:mx-0 space-y-10 md:space-y-32 py-8 md:py-0">
+                        <div class="bg-gradient-to-tr from-blue-100 to-blue-300 shadow-lg rounded-xl p-4 flex items-center justify-center mb-2">
+                            <svg class="h-8 w-8 text-blue-700 icon-animate" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422A12.083 12.083 0 0112 21.5a12.083 12.083 0 01-6.16-10.922L12 14z"/></svg>
+                        </div>
+                        <div class="bg-gradient-to-tr from-blue-100 to-blue-300 shadow-lg rounded-xl p-4 flex items-center justify-center mb-2">
+                            <svg class="h-8 w-8 text-blue-700 icon-animate" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 16h-1v-4h-1m1-4h.01M12 2a10 10 0 100 20 10 10 0 000-20z"/></svg>
+                        </div>
+                        <div class="bg-gradient-to-tr from-blue-100 to-blue-300 shadow-lg rounded-xl p-4 flex items-center justify-center mb-2">
+                            <svg class="h-8 w-8 text-blue-700 icon-animate" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H7a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                        </div>
+                    </div>
+                    <!-- Right side (Expert Instruction, Building Leadership) only on desktop -->
+                    <div class="hidden md:flex flex-1 flex-col space-y-32">
+                        <div class="about-card-mobile flex flex-col items-center md:items-start text-center md:text-left">
+                            <div class="text-xl font-semibold text-blue-900 mb-2">Expert Instruction</div>
+                            <div class="text-gray-700 max-w-md">
+                                Courses delivered by world-renowned experts covering theoretical and practical aspects.
+                            </div>
+                        </div>
+                        <div class="about-card-mobile flex flex-col items-center md:items-start text-center md:text-left">
                             <div class="text-xl font-semibold text-blue-900 mb-2">Building Leadership</div>
                             <div class="text-gray-700 max-w-md">
                                 <span class="text-blue-600 font-medium">Partnership</span> aims to develop the next generation of AI leaders in Morocco.
