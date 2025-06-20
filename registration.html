@@ -10,6 +10,11 @@
         body {
             font-family: 'Inter', sans-serif;
         }
+        .active-nav {
+            border-bottom: 3px solid #2563eb;
+            color: #1e293b !important;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -233,6 +238,24 @@
         </div>
     </footer>
     <script>
+    // Highlight active nav link
+    document.addEventListener('DOMContentLoaded', function() {
+        const navLinks = document.querySelectorAll('nav a');
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        
+        navLinks.forEach(link => {
+            const linkHref = link.getAttribute('href');
+            const linkPage = linkHref.split('/').pop();
+            
+            // Check if this link matches the current page
+            if (linkPage === currentPage || 
+                (currentPage === 'index.html' && linkHref === 'index.html') ||
+                (currentPage === '' && linkHref === 'index.html')) {
+                link.classList.add('active-nav');
+            }
+        });
+    });
+    
     // Smooth scroll for venue and sponsors links
     document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('a[href="index.html#venue"]').forEach(link => {
