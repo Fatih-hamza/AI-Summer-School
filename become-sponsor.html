@@ -10,9 +10,11 @@
         body { font-family: 'Inter', sans-serif; }
         .hero-text-shadow { text-shadow: 0 2px 8px rgba(0,0,0,0.18); }
         .active-nav {
-            border-bottom: 3px solid #2563eb;
-            color: #1e293b !important;
-            font-weight: bold;
+            color: #2563eb !important;
+            font-weight: normal;
+        }
+        .active-nav::after {
+            width: 100%;
         }
     </style>
 </head>
@@ -30,7 +32,7 @@
                     <a href="course.html" class="flex flex-col items-center justify-center text-center h-full text-gray-600 hover:text-blue-600 transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300"><span class="block">School</span><span class="block">Course</span></a>
                     <a href="dates.html" class="flex flex-col items-center justify-center text-center h-full text-gray-600 hover:text-blue-600 transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300"><span class="block">Important</span><span class="block">Dates</span></a>
                     <a href="registration.html" class="flex flex-col items-center justify-center text-center h-full text-gray-600 hover:text-blue-600 transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300"><span class="block">Registration</span><span class="block">Info</span></a>
-                    <a href="become-sponsor.html" class="flex flex-col items-center justify-center text-center h-full text-blue-600 font-bold transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-blue-600"> <span class="block">Become</span><span class="block">Sponsor</span></a>
+                    <a href="become-sponsor.html" class="flex flex-col items-center justify-center text-center h-full text-blue-600 transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-blue-600"><span class="block">Become</span><span class="block">Sponsor</span></a>
                     <a href="apply.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 ml-2">Apply Now</a>
                 </div>
                 <!-- Mobile menu button -->
@@ -52,7 +54,7 @@
             <a href="course.html" class="flex flex-col items-center justify-center text-center h-full text-gray-600 hover:text-blue-600"><span class="block">School</span><span class="block">Course</span></a>
             <a href="dates.html" class="flex flex-col items-center justify-center text-center h-full text-gray-600 hover:text-blue-600"><span class="block">Important</span><span class="block">Dates</span></a>
             <a href="registration.html" class="flex flex-col items-center justify-center text-center h-full text-gray-600 hover:text-blue-600"><span class="block">Registration</span><span class="block">Info</span></a>
-            <a href="become-sponsor.html" class="flex flex-col items-center justify-center text-center h-full text-blue-600 font-bold"><span class="block">Become</span><span class="block">Sponsor</span></a>
+            <a href="become-sponsor.html" class="flex flex-col items-center justify-center text-center h-full text-blue-600"><span class="block">Become</span><span class="block">Sponsor</span></a>
             <a href="apply.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Apply Now</a>
         </div>
     </div>

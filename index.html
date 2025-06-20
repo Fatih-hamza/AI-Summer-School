@@ -37,9 +37,11 @@
             box-shadow: 0 12px 32px rgba(20,184,166,0.18);
         }
         .active-nav {
-            border-bottom: 3px solid #2563eb;
-            color: #1e293b !important;
-            font-weight: bold;
+            color: #2563eb !important;
+            font-weight: normal;
+        }
+        .active-nav::after {
+            width: 100%;
         }
         .hero-text-shadow {
             text-shadow: 0 2px 8px rgba(0,0,0,0.18);
@@ -639,7 +641,7 @@
                 </p>
                 <div class="flex flex-wrap justify-center gap-8 mb-12 w-full">
                     <div class="bg-white rounded-2xl shadow-lg flex items-center justify-center p-6 w-48 h-28">
-                        <span class="text-3xl font-extrabold text-blue-900 tracking-widest">ACM</span>
+                        <img src="assets/images/logos/acm.png" alt="ACM Logo" class="h-16 w-auto object-contain">
                     </div>
                 </div>
                 <a href="become-sponsor.html" class="inline-block bg-white text-blue-700 text-2xl font-extrabold px-10 py-4 rounded-xl shadow-lg hover:bg-blue-700 hover:text-white transition-colors duration-200 mt-4 border-2 border-white hover:border-blue-700">Become a sponsor</a>

@@ -10,9 +10,11 @@
         body { font-family: 'Inter', sans-serif; }
         .hero-text-shadow { text-shadow: 0 2px 8px rgba(0,0,0,0.18); }
         .active-nav {
-            border-bottom: 3px solid #2563eb;
-            color: #1e293b !important;
-            font-weight: bold;
+            color: #2563eb !important;
+            font-weight: normal;
+        }
+        .active-nav::after {
+            width: 100%;
         }
     </style>
 </head>
@@ -25,7 +27,7 @@
                     <a href="index.html" class="text-xl font-bold text-blue-600">AI Summer School</a>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="scientific-committee.html" class="flex flex-col items-center justify-center text-center h-full text-blue-600 font-bold transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-blue-600"> <span class="block">Scientific</span><span class="block">Committee</span></a>
+                    <a href="scientific-committee.html" class="flex flex-col items-center justify-center text-center h-full text-blue-600 transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-blue-600"> <span class="block">Scientific</span><span class="block">Committee</span></a>
                     <a href="speakers.html" class="text-gray-600 hover:text-blue-600 transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300">Speakers</a>
                     <a href="course.html" class="flex flex-col items-center justify-center text-center h-full text-gray-600 hover:text-blue-600 transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300"><span class="block">School</span><span class="block">Course</span></a>
                     <a href="dates.html" class="flex flex-col items-center justify-center text-center h-full text-gray-600 hover:text-blue-600 transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300"><span class="block">Important</span><span class="block">Dates</span></a>
@@ -47,7 +49,7 @@
     <!-- Mobile menu panel (hidden by default) -->
     <div id="mobile-menu" class="md:hidden hidden fixed top-16 left-0 w-full bg-white shadow-lg z-50">
         <div class="flex flex-col items-center space-y-4 py-6">
-            <a href="scientific-committee.html" class="flex flex-col items-center justify-center text-center h-full text-blue-600 font-bold"><span class="block">Scientific</span><span class="block">Committee</span></a>
+            <a href="scientific-committee.html" class="flex flex-col items-center justify-center text-center h-full text-blue-600"><span class="block">Scientific</span><span class="block">Committee</span></a>
             <a href="speakers.html" class="text-gray-600 hover:text-blue-600">Speakers</a>
             <a href="course.html" class="flex flex-col items-center justify-center text-center h-full text-gray-600 hover:text-blue-600"><span class="block">School</span><span class="block">Course</span></a>
             <a href="dates.html" class="flex flex-col items-center justify-center text-center h-full text-gray-600 hover:text-blue-600"><span class="block">Important</span><span class="block">Dates</span></a>
@@ -63,7 +65,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
 
                 <!-- Jamal BENHAMOU -->
-                <div class="bg-white rounded-xl shadow-lg p-6">
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center">
                     <div class="h-20 w-20 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center overflow-hidden">
                         <img src="assets/images/speakers/PHOTO-benhamou.jpg" alt="Jamal BENHAMOU" class="h-20 w-20 object-cover rounded-full" />
                     </div>
@@ -76,6 +78,13 @@
                         <a href="https://www.linkedin.com/in/jamalbenhamou?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" title="LinkedIn">
                             <svg class="w-6 h-6 text-[#0A66C2] hover:text-blue-800 transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm13.5 11.28h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.89v1.36h.04c.4-.75 1.37-1.54 2.82-1.54 3.02 0 3.58 1.99 3.58 4.58v5.6z"/></svg>
                         </a>
+                    </div>
+                    <div class="mt-4">
+                        <button class="text-blue-600 hover:underline text-sm bio-toggle-button" data-target="bio-jamal">Read Bio</button>
+                    </div>
+                    <div id="bio-jamal" class="text-sm text-gray-700 text-left mt-4 hidden">
+                        <p>Jamal BENHAMOU has worked for 30 years in the field of restructuring and operational development of business projects, particularly within the IT sector, with a strong predilection for the implementation of incubation and innovation support systems.</p>
+                        <p class="mt-2">His strong sensitivity to disruptive innovation, in multicultural and cross-border project contexts, led him to manage the Soft Center (R&D and software innovation center). And this for 15 years now, during which time he has managed numerous Open Innovation programs combining different practices such as Design Thinking, Lean Startup, Design Sprint and Growth Hacking.</p>
                     </div>
                 </div>
                 
@@ -159,6 +168,24 @@
                 });
             });
         }
+    });
+
+    // Bio toggle functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.bio-toggle-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const targetId = this.dataset.target;
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.classList.toggle('hidden');
+                    if (targetElement.classList.contains('hidden')) {
+                        this.textContent = 'Read Bio';
+                    } else {
+                        this.textContent = 'Hide Bio';
+                    }
+                }
+            });
+        });
     });
     </script>
 </body>
