@@ -8,8 +8,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <style>
+        html {
+            max-width: 100vw;
+            overflow-x: hidden;
+        }
         body {
             font-family: 'Inter', sans-serif;
+            max-width: 100vw;
+            overflow-x: hidden;
         }
         .icon-animate {
             transition: color 0.2s, transform 0.3s;
@@ -31,9 +37,54 @@
             box-shadow: 0 12px 32px rgba(20,184,166,0.18);
         }
         .active-nav {
-            border-bottom: 3px solid #2563eb;
-            color: #1e293b !important;
-            font-weight: bold;
+            color: #2563eb !important;
+            font-weight: normal;
+        }
+        .active-nav::after {
+            width: 100%;
+        }
+        .hero-text-shadow {
+            text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+        }
+        @media (max-width: 768px) {
+            #hero-section {
+                background: linear-gradient(rgba(30, 58, 138, 0.7), rgba(30, 58, 138, 0.7)), url('assets/images/Tour.jpg') center center / cover no-repeat !important;
+            }
+            #hero-section .prose,
+            #hero-section .prose p {
+                color: #fff !important;
+                text-shadow: 0 2px 8px rgba(0,0,0,0.28);
+            }
+            #hero-title,
+            #hero-section .hero-text-shadow,
+            #hero-section .text-blue-800,
+            #hero-section .text-blue-900 {
+                color: #fff !important;
+                text-shadow: 0 2px 8px rgba(0,0,0,0.28);
+            }
+            #hero-section .hero-text-shadow svg,
+            #hero-section .hero-text-shadow .text-blue-600,
+            #hero-section .hero-text-shadow .text-blue-800 {
+                color: #fff !important;
+                stroke: #fff !important;
+                fill: #fff !important;
+            }
+            #hero-section .hero-text-shadow svg {
+                display: none !important;
+            }
+            #hero-section button:last-of-type {
+                background: #fff !important;
+                color: #1e3a8a !important;
+                border: 2px solid #1e3a8a !important;
+            }
+        }
+        @media (max-width: 767px) {
+            .about-card-mobile {
+                background: #fff;
+                border-radius: 1rem;
+                box-shadow: 0 2px 12px 0 rgba(30, 64, 175, 0.08);
+                padding: 1.5rem 1rem;
+            }
         }
     </style>
 </head>
@@ -54,13 +105,13 @@
                     <a href="course.html" class="flex flex-col items-center justify-center text-center h-full text-gray-600 hover:text-blue-600 transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300"><span class="block">School</span><span class="block">Course</span></a>
                     <a href="dates.html" class="flex flex-col items-center justify-center text-center h-full text-gray-600 hover:text-blue-600 transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300"><span class="block">Important</span><span class="block">Dates</span></a>
                     <a href="registration.html" class="flex flex-col items-center justify-center text-center h-full text-gray-600 hover:text-blue-600 transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300"><span class="block">Registration</span><span class="block">Info</span></a>
-                    <a href="become-sponsor.html" class="flex flex-col items-center justify-center text-center h-full text-gray-600 hover:text-blue-600 transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300"><span class="block">Become</span><span class="block">Sponsor</span></a>
-                    <a href="apply.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 ml-2">Apply Now</a>
+                    <a href="contact.html#sponsor" class="flex flex-col items-center justify-center text-center h-full text-gray-600 hover:text-blue-600 transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300"><span class="block">Become</span><span class="block">Sponsor</span></a>
+                    <a href="apply.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200">Apply Now</a>
                 </div>
 
                 <!-- Mobile menu button -->
                 <div class="md:hidden">
-                    <button type="button" class="text-gray-600 hover:text-blue-600 focus:outline-none">
+                    <button id="burger-btn" type="button" class="text-gray-600 hover:text-blue-600 focus:outline-none" aria-label="Open menu" aria-expanded="false">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
@@ -70,35 +121,65 @@
         </div>
     </nav>
 
+    <!-- Mobile menu panel (hidden by default) -->
+    <div id="mobile-menu" class="md:hidden hidden fixed top-16 left-0 w-full bg-white shadow-lg z-50">
+        <div class="flex flex-col items-center space-y-4 py-6">
+            <a href="scientific-committee.html" class="flex flex-col items-center justify-center text-center h-full text-gray-600 hover:text-blue-600"><span class="block">Scientific</span><span class="block">Committee</span></a>
+            <a href="speakers.html" class="text-gray-600 hover:text-blue-600">Speakers</a>
+            <a href="course.html" class="flex flex-col items-center justify-center text-center h-full text-gray-600 hover:text-blue-600"><span class="block">School</span><span class="block">Course</span></a>
+            <a href="dates.html" class="flex flex-col items-center justify-center text-center h-full text-gray-600 hover:text-blue-600"><span class="block">Important</span><span class="block">Dates</span></a>
+            <a href="registration.html" class="flex flex-col items-center justify-center text-center h-full text-gray-600 hover:text-blue-600"><span class="block">Registration</span><span class="block">Info</span></a>
+            <a href="contact.html#sponsor" class="flex flex-col items-center justify-center text-center h-full text-gray-600 hover:text-blue-600"><span class="block">Become</span><span class="block">Sponsor</span></a>
+            <a href="apply.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Apply Now</a>
+        </div>
+    </div>
+
     <!-- Hero Section -->
-    <section class="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-32 pb-16 md:pb-32 relative overflow-hidden bg-blue-50" id="hero-section">
-        <canvas id="animated-bg" class="absolute inset-0 w-full h-full pointer-events-none z-0"></canvas>
+    <section class="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-32 pb-16 md:pb-32 relative overflow-hidden" id="hero-section" style="background: url('assets/images/bg.jpg') center center / cover no-repeat;">
         <div class="max-w-4xl mx-auto text-center relative z-10">
-            <!-- Logos -->
-            <div id="hero-logos" class="flex justify-center items-center space-x-4 sm:space-x-8 mb-12 will-change-transform">
-                <img src="assets/images/logos/Logo_inpt.png" alt="INPT Logo" class="h-12 sm:h-16 md:h-20 w-auto object-contain">
-                <img src="assets/images/logos/logo_moroccoAI.png" alt="MoroccoAI Logo" class="h-12 sm:h-16 md:h-20 w-auto object-contain">
-            </div>
-            
+
             <!-- Title -->
-            <h1 id="hero-title" class="text-4xl sm:text-5xl font-bold text-blue-900 mb-8 leading-tight will-change-transform">
+            <h1 id="hero-title" class="text-4xl sm:text-5xl font-bold text-blue-900 mb-4 leading-tight will-change-transform hero-text-shadow">
                 Summer School on Multimodal Foundation Models and Generative AI
             </h1>
             
+            <!-- Date and Location -->
+            <div class="flex items-center justify-center gap-3 mb-8 hero-text-shadow">
+                <div class="flex items-center gap-2">
+                    <svg class="h-5 w-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    </svg>
+                    <span class="text-xl font-semibold text-blue-800">INPT, Rabat</span>
+                </div>
+                <div class="w-1 h-1 bg-blue-600 rounded-full"></div>
+                <div class="flex items-center gap-2">
+                    <svg class="h-5 w-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                    </svg>
+                    <span class="text-xl font-semibold text-blue-800">8 - 12 September</span>
+                </div>
+            </div>
+            
             <!-- Description -->
-            <div class="prose prose-lg mx-auto mb-12 text-gray-600">
+            <div class="prose prose-lg mx-auto mb-12 text-gray-600 hero-text-shadow">
                 <p class="mb-4">
-                    Welcome to the AI Summer School, an immersive five-day program jointly organized by MoroccoAI and Institut National Des Postes et Télécommunication (INPT). Taking place September 8-12 at INPT Rabat, this transformative experience will equip participants with cutting-edge AI knowledge and skills.
+                    Welcome to the <strong>2nd Edition</strong> of the AI Summer School, an immersive five-day program jointly organized by MoroccoAI, Institut National Des Postes et Télécommunication (INPT), IMT Nord Europe, and Soft Centre. This transformative experience will equip participants with cutting-edge AI knowledge and skills.
                 </p>
-                <p class="mb-8">
-                    Gain practical knowledge to advance Morocco's AI capabilities and your own career prospects.
+                <p class="mb-8 font-bold text-blue-900">
+                    Supported by ACM SIGMM
                 </p>
             </div>
             
             <!-- CTA Button -->
-            <a href="apply.html" class="inline-block bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors duration-200 shadow-lg hover:shadow-xl">
-                Apply Now
-            </a>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="apply.html" class="inline-block bg-blue-900 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-800 transition-colors duration-200 shadow-lg hover:shadow-xl border-2 border-blue-900">
+                    Apply Now
+                </a>
+                <button onclick="document.getElementById('save-the-date').scrollIntoView({behavior: 'smooth'})" class="inline-block bg-white text-blue-900 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-50 transition-colors duration-200 shadow-lg hover:shadow-xl border-2 border-blue-900">
+                    Save the Date
+                </button>
+            </div>
         </div>
     </section>
 
@@ -108,48 +189,60 @@
             <h2 class="text-3xl sm:text-4xl font-extrabold text-blue-900 mb-16 text-center tracking-tight" style="font-family: 'Inter', sans-serif;">
                 About the Summer School
             </h2>
-            <div class="relative flex flex-col md:flex-row md:items-start md:justify-center">
-                <!-- Timeline vertical line -->
+            <div class="relative w-full">
+                <!-- Timeline vertical line (hidden on mobile) -->
                 <div class="hidden md:block absolute left-1/2 top-0 h-full w-1 bg-gradient-to-b from-blue-200 via-blue-400 to-blue-200 rounded-full z-0"></div>
-                <div class="flex flex-col md:flex-row w-full md:space-x-16">
-                    <!-- Left side (In-depth Analysis, Research Opportunity) -->
-                    <div class="flex-1 flex flex-col space-y-24 md:space-y-32">
-                        <div class="flex flex-col items-center md:items-end text-center md:text-right">
+                <!-- Mobile: stack all cards in one column; Desktop: three-part layout -->
+                <div class="flex flex-col gap-4 md:flex-row md:gap-0 md:space-x-16 w-full">
+                    <!-- Mobile: all cards in one column -->
+                    <div class="flex flex-col gap-4 w-full md:w-auto md:flex-1 md:space-y-32">
+                        <div class="about-card-mobile flex flex-col items-center md:items-end text-center md:text-right">
                             <div class="text-xl font-semibold text-blue-900 mb-2">In-depth Analysis</div>
                             <div class="text-gray-700 max-w-md">
                                 Clear overview of state-of-the-art research in <span class="text-blue-600 font-medium">Multimodal Foundation Models</span> and <span class="text-blue-600 font-medium">Generative AI</span>.
                             </div>
                         </div>
-                        <div class="flex flex-col items-center md:items-end text-center md:text-right">
+                        <div class="about-card-mobile flex flex-col items-center md:items-end text-center md:text-right">
                             <div class="text-xl font-semibold text-blue-900 mb-2">Research Opportunity</div>
                             <div class="text-gray-700 max-w-md">
                                 Young researchers and Ph.D. students benefit from direct interaction with AI leaders.
                             </div>
                         </div>
-                    </div>
-                    <!-- Timeline icons -->
-                    <div class="flex flex-col items-center justify-between z-10 mx-auto md:mx-0">
-                        <div class="flex flex-col items-center space-y-24 md:space-y-32">
-                            <div class="bg-gradient-to-tr from-blue-100 to-blue-300 shadow-lg rounded-xl p-4 flex items-center justify-center mb-2">
-                                <svg class="h-8 w-8 text-blue-700 icon-animate" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422A12.083 12.083 0 0112 21.5a12.083 12.083 0 01-6.16-10.922L12 14z"/></svg>
-                            </div>
-                            <div class="bg-gradient-to-tr from-blue-100 to-blue-300 shadow-lg rounded-xl p-4 flex items-center justify-center mb-2">
-                                <svg class="h-8 w-8 text-blue-700 icon-animate" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 16h-1v-4h-1m1-4h.01M12 2a10 10 0 100 20 10 10 0 000-20z"/></svg>
-                            </div>
-                            <div class="bg-gradient-to-tr from-blue-100 to-blue-300 shadow-lg rounded-xl p-4 flex items-center justify-center mb-2">
-                                <svg class="h-8 w-8 text-blue-700 icon-animate" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H7a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Right side (Expert Instruction, Building Leadership) -->
-                    <div class="flex-1 flex flex-col space-y-24 md:space-y-32">
-                        <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                        <!-- On desktop, right cards are in a separate column -->
+                        <div class="about-card-mobile flex flex-col items-center md:hidden text-center">
                             <div class="text-xl font-semibold text-blue-900 mb-2">Expert Instruction</div>
                             <div class="text-gray-700 max-w-md">
                                 Courses delivered by world-renowned experts covering theoretical and practical aspects.
                             </div>
                         </div>
-                        <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                        <div class="about-card-mobile flex flex-col items-center md:hidden text-center">
+                            <div class="text-xl font-semibold text-blue-900 mb-2">Building Leadership</div>
+                            <div class="text-gray-700 max-w-md">
+                                <span class="text-blue-600 font-medium">Partnership</span> aims to develop the next generation of AI leaders in Morocco.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Timeline icons (hidden on mobile, visible on md+) -->
+                    <div class="hidden md:flex flex-col items-center justify-between z-10 mx-auto md:mx-0 space-y-10 md:space-y-32 py-8 md:py-0">
+                        <div class="bg-gradient-to-tr from-blue-100 to-blue-300 shadow-lg rounded-xl p-4 flex items-center justify-center mb-2">
+                            <svg class="h-8 w-8 text-blue-700 icon-animate" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422A12.083 12.083 0 0112 21.5a12.083 12.083 0 01-6.16-10.922L12 14z"/></svg>
+                        </div>
+                        <div class="bg-gradient-to-tr from-blue-100 to-blue-300 shadow-lg rounded-xl p-4 flex items-center justify-center mb-2">
+                            <svg class="h-8 w-8 text-blue-700 icon-animate" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 16h-1v-4h-1m1-4h.01M12 2a10 10 0 100 20 10 10 0 000-20z"/></svg>
+                        </div>
+                        <div class="bg-gradient-to-tr from-blue-100 to-blue-300 shadow-lg rounded-xl p-4 flex items-center justify-center mb-2">
+                            <svg class="h-8 w-8 text-blue-700 icon-animate" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H7a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                        </div>
+                    </div>
+                    <!-- Right side (Expert Instruction, Building Leadership) only on desktop -->
+                    <div class="hidden md:flex flex-1 flex-col space-y-32">
+                        <div class="about-card-mobile flex flex-col items-center md:items-start text-center md:text-left">
+                            <div class="text-xl font-semibold text-blue-900 mb-2">Expert Instruction</div>
+                            <div class="text-gray-700 max-w-md">
+                                Courses delivered by world-renowned experts covering theoretical and practical aspects.
+                            </div>
+                        </div>
+                        <div class="about-card-mobile flex flex-col items-center md:items-start text-center md:text-left">
                             <div class="text-xl font-semibold text-blue-900 mb-2">Building Leadership</div>
                             <div class="text-gray-700 max-w-md">
                                 <span class="text-blue-600 font-medium">Partnership</span> aims to develop the next generation of AI leaders in Morocco.
@@ -246,40 +339,38 @@
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-blue-900 mb-14 text-center tracking-tight" style="font-family: 'Inter', sans-serif;">
                     Who Should Attend?
                 </h2>
-                <div class="flex flex-col md:flex-row gap-10 md:gap-16 justify-center items-stretch">
-                    <!-- Persona 1: PhD Holders & Students -->
-                    <div class="flex-1 bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 rounded-2xl shadow-lg p-8 flex flex-col items-center text-center transition-all duration-300 hover:border-blue-500 hover:shadow-2xl">
-                        <div class="bg-blue-600 rounded-full p-4 mb-6 shadow-md">
-                            <svg class="h-10 w-10 text-white icon-animate" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422A12.083 12.083 0 0112 21.5a12.083 12.083 0 01-6.16-10.922L12 14z"/></svg>
-                        </div>
-                        <h3 class="text-2xl font-bold text-blue-900 mb-3">PhD Holders & Students</h3>
-                        <p class="text-gray-700 mb-5 text-lg">Expand your research horizons, connect with top minds, and stay ahead of the curve in AI innovation.</p>
-                        <ul class="text-left text-base text-blue-900 space-y-3 font-medium">
-                            <li class="flex items-start"><span class="inline-block w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3"></span>Unmatched networking with leading researchers and peers</li>
-                            <li class="flex items-start"><span class="inline-block w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3"></span>Deep dives into current AI & development trends</li>
-                            <li class="flex items-start"><span class="inline-block w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3"></span>Explore state-of-the-art solutions across industries</li>
-                            <li class="flex items-start"><span class="inline-block w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3"></span>Discover new research problems and collaboration opportunities</li>
-                        </ul>
-                    </div>
-                    <!-- Persona 2: Engineering & Master Students -->
-                    <div class="flex-1 bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 rounded-2xl shadow-lg p-8 flex flex-col items-center text-center transition-all duration-300 hover:border-blue-500 hover:shadow-2xl">
-                        <div class="bg-blue-600 rounded-full p-4 mb-6 shadow-md">
-                            <svg class="h-10 w-10 text-white icon-animate" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9.75 17L9 21l3-1.5L15 21l-.75-4M4 4h16v2a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm0 0V2a2 2 0 012-2h12a2 2 0 012 2v2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v2m-6 0h6"/></svg>
-                        </div>
-                        <h3 class="text-2xl font-bold text-blue-900 mb-3">Engineering & Master Students</h3>
-                        <p class="text-gray-700 mb-5 text-lg">Fuel your curiosity, build real projects, and get hands-on with the latest in AI—mentored by industry leaders.</p>
-                        <ul class="text-left text-base text-blue-900 space-y-3 font-medium">
-                            <li class="flex items-start"><span class="inline-block w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3"></span>Practical labs and real-world AI challenges</li>
-                            <li class="flex items-start"><span class="inline-block w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3"></span>Mentorship from top-tier professionals</li>
-                            <li class="flex items-start"><span class="inline-block w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3"></span>Opportunities to build, experiment, and innovate</li>
-                            <li class="flex items-start"><span class="inline-block w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3"></span>Connect with a community of passionate builders</li>
-                        </ul>
-                    </div>
+                <div class="max-w-2xl mx-auto">
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-lg text-blue-900 font-semibold">
+                        <li class="flex items-start gap-3 bg-blue-50 rounded-xl px-5 py-3 shadow-sm">
+                            <span class="inline-block w-3 h-3 bg-blue-600 rounded-full flex-shrink-0 mt-1"></span>
+                            Master Students
+                        </li>
+                        <li class="flex items-start gap-3 bg-blue-50 rounded-xl px-5 py-3 shadow-sm">
+                            <span class="inline-block w-3 h-3 bg-blue-600 rounded-full flex-shrink-0 mt-1"></span>
+                            Ph.D. Students
+                        </li>
+                        <li class="flex items-start gap-3 bg-blue-50 rounded-xl px-5 py-3 shadow-sm">
+                            <span class="inline-block w-3 h-3 bg-blue-600 rounded-full flex-shrink-0 mt-1"></span>
+                            Post-Docs
+                        </li>
+                        <li class="flex items-start gap-3 bg-blue-50 rounded-xl px-5 py-3 shadow-sm">
+                            <span class="inline-block w-3 h-3 bg-blue-600 rounded-full flex-shrink-0 mt-1"></span>
+                            Young researchers (academic & industrial)
+                        </li>
+                        <li class="flex items-start gap-3 bg-blue-50 rounded-xl px-5 py-3 shadow-sm">
+                            <span class="inline-block w-3 h-3 bg-blue-600 rounded-full flex-shrink-0 mt-1"></span>
+                            Senior researchers (academic & industrial)
+                        </li>
+                        <li class="flex items-start gap-3 bg-blue-50 rounded-xl px-5 py-3 shadow-sm">
+                            <span class="inline-block w-3 h-3 bg-blue-600 rounded-full flex-shrink-0 mt-1"></span>
+                            Academic / Industrial professionals
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <!-- 4. Vertical Timeline with Floating Cards -->
+        <!-- Vertical Day Timeline -->
         <section id="vertical-timeline" class="w-full bg-white py-20 px-4 sm:px-6 lg:px-8" data-aos="fade-up">
             <div class="max-w-4xl mx-auto">
                 <h2 class="text-2xl sm:text-3xl font-extrabold text-blue-900 mb-12 text-center tracking-tight">Daily Schedule Overview</h2>
@@ -361,13 +452,32 @@
                         </span>
                         <p class="text-gray-700">A leading non-profit organization dedicated to advancing artificial intelligence research, education, and implementation in Morocco through community building and knowledge sharing.</p>
                     </div>
-                    <!-- Strategic Partnership -->
+
+
+                    <!-- IMT Nord Atlantique -->
                     <div class="flex-1 flex flex-col items-center text-center">
                         <span class="mb-4 flex items-center justify-center">
-                            <img src="assets/images/partnership.png" alt="Partnership" class="h-12 w-auto object-contain" />
+                            <img src="assets/images/logos/Logo_IMT_Nord_Europe.png" alt="IMT Nord Atlantique Logo" class="h-12 w-auto object-contain" />
                         </span>
-                        <p class="text-gray-700">This strategic partnership brings together academic excellence and industry connections to create an unparalleled learning experience for participants and strengthen Morocco's AI ecosystem.</p>
+                        <p class="text-gray-700">IMT Nord Atlantique is a top French engineering school renowned for its excellence in digital sciences, engineering, and innovation, fostering international collaboration and advanced research.</p>
                     </div>
+
+                    <!-- Soft Centre -->
+                    <div class="flex-1 flex flex-col items-center text-center">
+                        <span class="mb-4 flex items-center justify-center">
+                            <img src="assets/images/logos/sc.png" alt="Soft Centre" class="h-12 w-auto object-contain" />
+                        </span>
+                        <p class="text-gray-700">Soft Centre is a software innovation hub established around 2010 that serves as a national innovation catalyst bridging academia, industry, and students to accelerate digital transformation and develop novel IT solutions in Morocco.</p>
+                    </div>
+
+
+
+
+
+                </div>
+                <div class="w-4/5 h-px bg-gradient-to-r from-transparent via-blue-400 to-transparent mx-auto my-12"></div>
+                <div class="text-gray-700 text-base max-w-3xl mx-auto">
+                    <p>This strategic partnership brings together academic excellence and industry connections to create an unparalleled learning experience for participants and strengthen Morocco's AI ecosystem.</p>
                 </div>
             </div>
         </section>
@@ -531,19 +641,10 @@
                 </p>
                 <div class="flex flex-wrap justify-center gap-8 mb-12 w-full">
                     <div class="bg-white rounded-2xl shadow-lg flex items-center justify-center p-6 w-48 h-28">
-                        <img src="assets/images/sponsors/soft_centre.jpg" alt="Soft Centre" class="object-contain h-full w-full" />
-                    </div>
-                    <div class="bg-white rounded-2xl shadow-lg flex items-center justify-center p-6 w-48 h-28">
-                        <img src="assets/images/sponsors/Logo_IMT_Nord_Europe.png" alt="IMT Nord Europe" class="object-contain h-full w-full" />
-                    </div>
-                    <div class="bg-white rounded-2xl shadow-lg flex items-center justify-center p-6 w-48 h-28">
-                        <img src="assets/images/sponsors/Logo_ANRT.jpg" alt="ANRT" class="object-contain h-full w-full" />
-                    </div>
-                    <div class="bg-white rounded-2xl shadow-lg flex items-center justify-center p-6 w-48 h-28">
-                        <img src="assets/images/sponsors/Logo_inpt.png" alt="INPT" class="object-contain h-full w-full" />
+                        <img src="assets/images/logos/acm.png" alt="ACM Logo" class="h-16 w-auto object-contain">
                     </div>
                 </div>
-                <a href="contact.html" class="inline-block bg-white text-blue-700 text-2xl font-extrabold px-10 py-4 rounded-xl shadow-lg hover:bg-blue-700 hover:text-white transition-colors duration-200 mt-4 border-2 border-white hover:border-blue-700">Become a sponsor</a>
+                <a href="become-sponsor.html" class="inline-block bg-white text-blue-700 text-2xl font-extrabold px-10 py-4 rounded-xl shadow-lg hover:bg-blue-700 hover:text-white transition-colors duration-200 mt-4 border-2 border-white hover:border-blue-700">Become a sponsor</a>
             </div>
         </section>
 
@@ -564,6 +665,8 @@
             <div class="max-w-4xl mx-auto flex flex-col items-center">
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-blue-900 mb-6 text-center">Venue</h2>
                 <p class="text-lg text-gray-700 mb-8 text-center max-w-2xl">The summer school will take place in the heart of the beautiful city of Rabat, at the Institut National des Postes et Télécommunications (INPT).</p>
+                <p class="text-lg text-gray-700 mb-8 text-center max-w-2xl">Rabat, the capital of Morocco, is located on the Atlantic coast at the mouth of the Bou Regreg River. Founded in the 12th century, it is a UNESCO World Heritage Site and one of Morocco’s four Imperial cities. Recognized by CNN as a top travel destination, Rabat is accessible by train and via Rabat–Salé Airport.
+                </p>
                 <div class="w-full rounded-2xl shadow-lg overflow-hidden flex items-center justify-center" style="min-height:320px;">
                     <iframe
                         src="https://www.google.com/maps?q=Institut+National+des+Postes+et+Télécommunications,+Rabat,+Morocco&output=embed"
@@ -574,7 +677,7 @@
         </section>
 
         <!-- Save the Date Section -->
-        <section class="w-full bg-blue-600 py-32 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center" data-aos="fade-up">
+        <section id="save-the-date" class="w-full bg-blue-600 py-32 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center" data-aos="fade-up">
             <div class="max-w-3xl mx-auto flex flex-col items-center">
                 <h2 class="text-5xl sm:text-6xl font-extrabold text-white mb-8 text-center">Save the Date!</h2>
                 <div class="text-3xl sm:text-4xl font-extrabold text-white mb-4 text-center">September 08 - 12, 2025</div>
@@ -590,97 +693,6 @@
                 </a>
             </div>
         </section>
-
-        <script>
-        // Animated Background Effect
-        class Orb {
-            constructor(canvas) {
-                this.canvas = canvas;
-                this.ctx = canvas.getContext('2d');
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.radius = 50 + Math.random() * 100;
-                this.dx = (Math.random() - 0.5) * 0.5;
-                this.dy = (Math.random() - 0.5) * 0.5;
-                this.phase = Math.random() * Math.PI * 2;
-                this.color = `rgba(59, 130, 246, ${0.2 + Math.random() * 0.15})`; // Darker blue color
-            }
-
-            update() {
-                // Update position
-                this.x += this.dx;
-                this.y += this.dy;
-
-                // Bounce off edges
-                if (this.x < 0 || this.x > this.canvas.width) this.dx *= -1;
-                if (this.y < 0 || this.y > this.canvas.height) this.dy *= -1;
-
-                // Update phase for pulsing effect
-                this.phase += 0.02;
-                const pulse = Math.sin(this.phase) * 0.1 + 0.9;
-                this.currentRadius = this.radius * pulse;
-            }
-
-            draw() {
-                const gradient = this.ctx.createRadialGradient(
-                    this.x, this.y, 0,
-                    this.x, this.y, this.currentRadius
-                );
-                gradient.addColorStop(0, this.color);
-                gradient.addColorStop(1, 'rgba(59, 130, 246, 0)');
-
-                this.ctx.beginPath();
-                this.ctx.arc(this.x, this.y, this.currentRadius, 0, Math.PI * 2);
-                this.ctx.fillStyle = gradient;
-                this.ctx.fill();
-            }
-        }
-
-        class AnimatedBackground {
-            constructor() {
-                this.canvas = document.getElementById('animated-bg');
-                this.ctx = this.canvas.getContext('2d');
-                this.orbs = [];
-                this.numOrbs = 32; // Doubled the number of orbs again
-                this.init();
-            }
-
-            init() {
-                this.resize();
-                window.addEventListener('resize', () => this.resize());
-
-                // Create orbs
-                for (let i = 0; i < this.numOrbs; i++) {
-                    this.orbs.push(new Orb(this.canvas));
-                }
-
-                this.animate();
-            }
-
-            resize() {
-                const section = this.canvas.parentElement;
-                this.canvas.width = section.offsetWidth;
-                this.canvas.height = section.offsetHeight;
-            }
-
-            animate() {
-                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-
-                // Update and draw each orb
-                this.orbs.forEach(orb => {
-                    orb.update();
-                    orb.draw();
-                });
-
-                requestAnimationFrame(() => this.animate());
-            }
-        }
-
-        // Initialize the animated background when the page loads
-        window.addEventListener('load', () => {
-            new AnimatedBackground();
-        });
-        </script>
 
         <!-- Footer Section -->
         <footer class="w-full bg-blue-950 pt-16 pb-8 px-4 sm:px-6 lg:px-8 mt-0">
@@ -807,11 +819,20 @@
         // Highlight active nav link
         document.addEventListener('DOMContentLoaded', function() {
             const navLinks = document.querySelectorAll('nav a');
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            
             navLinks.forEach(link => {
-                if (window.location.pathname.endsWith(link.getAttribute('href'))) {
+                const linkHref = link.getAttribute('href');
+                const linkPage = linkHref.split('/').pop();
+                
+                // Check if this link matches the current page
+                if (linkPage === currentPage || 
+                    (currentPage === 'index.html' && linkHref === 'index.html') ||
+                    (currentPage === '' && linkHref === 'index.html')) {
                     link.classList.add('active-nav');
                 }
             });
+            
             // Smooth scroll for venue and sponsors links
             document.querySelectorAll('a[href="index.html#venue"]').forEach(link => {
                 link.addEventListener('click', function(e) {
@@ -829,6 +850,26 @@
                     }
                 });
             });
+        });
+        </script>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const burger = document.getElementById('burger-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (burger && mobileMenu) {
+                burger.addEventListener('click', function() {
+                    const expanded = burger.getAttribute('aria-expanded') === 'true';
+                    burger.setAttribute('aria-expanded', !expanded);
+                    mobileMenu.classList.toggle('hidden');
+                });
+                // Close menu on link click
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', function() {
+                        mobileMenu.classList.add('hidden');
+                        burger.setAttribute('aria-expanded', 'false');
+                    });
+                });
+            }
         });
         </script>
     </body>
