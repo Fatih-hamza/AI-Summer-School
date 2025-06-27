@@ -48,6 +48,10 @@
         .active-nav::after {
             width: 100%;
         }
+        /* Hide scientific committee links */
+        a[href="scientific-committee.html"] {
+            display: none !important;
+        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -99,9 +103,8 @@
     <!-- Speakers Section -->
     <section class="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
-            <h1 class="text-4xl font-bold text-gray-900 mb-6 text-center">Meet The Expert Advisers Driving The Event's Agenda</h1>
             <p class="max-w-3xl mx-auto text-center text-lg text-blue-900 mb-12 font-medium">
-                The AI Spring School presents a distinguished lineup of speakers who bridge the gap between academic research and industry innovation. Our carefully selected experts combine theoretical expertise with practical insights, offering participants a comprehensive understanding of AI's current landscape and future directions.
+                The AI Summer School presents a distinguished lineup of speakers who bridge the gap between academic research and industry innovation. Our carefully selected experts combine theoretical expertise with practical insights, offering participants a comprehensive understanding of AI's current landscape and future directions.
             </p>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -125,8 +128,8 @@
                             <p class="text-gray-700 text-sm">Prof. Alberto Del Bimbo is a renowned expert in multimedia and computer vision, with decades of experience in academic research and leadership. He has contributed to major advances in video analysis and pattern recognition.</p>
                         </div>
                         <div class="speaker-tab-content hidden" id="session-2">
-                            <p class="text-blue-600 text-center text-sm font-medium mb-4">Session: "Advanced Computer Vision: From Theory to Real-World Applications"</p>
-                            <p class="text-gray-700 text-sm">Prof. Del Bimbo's session will cover the intersection of multimedia, AI, and computer vision, with a focus on real-world applications and future trends.</p>
+                            <p class="text-blue-600 text-center text-sm font-medium mb-4">Learning Backward Compatible Representations</p>
+                            <p class="text-gray-700 text-sm">In today's multimedia-rich environment, the rapid growth of data poses significant challenges for developing efficient multi-modal retrieval systems. These systems are essential for retrieving relevant data like text, images, audio, and video. As data continues to expand, scalable and high-performance retrieval systems are increasingly necessary, driving advancements in technology. Embedding-based deep neural networks (DNNs) have become a key solution, transforming high-dimensional data into lower-dimensional embeddings that capture semantic meanings and enable easy comparison and retrieval. However, a major challenge is that when a DNN is updated, the internal representation changes, which complicates updating retrieval systems with new models. This requires re-indexing, namely to re-extract new feature representations for all the data in the gallery-set. Backward-compatible representation learning addresses this challenge. It enables new models to generate embeddings that remain comparable with those from earlier models, allowing updated systems to interact with existing gallery data without full reprocessing. We will discuss the subject of compatibility with reference to the recent literature and new findings.</p>
                         </div>
                     </div>
                     <div class="w-full mt-4 pt-4 border-t border-gray-200">
@@ -145,12 +148,50 @@
                     </div>
                 </div>
 
+
+                <!-- Amin Mantrach Card -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col items-center p-6">
+                    <img src="assets/images/speakers/mantrach.png" alt="Amin Mantrach" class="w-32 h-32 rounded-full object-cover border-4 border-blue-100 mb-4 speaker-image" />
+                    <h3 class="text-xl font-bold text-blue-900 text-center mb-1">Dr. Amin Mantrach</h3>
+                    <div class="text-blue-700 text-center text-base font-medium mb-1">Applied Science Manager</div>
+                    <div class="text-gray-600 text-center text-sm mb-2 flex items-center justify-center gap-2">
+                        <img src="assets/images/logos/Amazon.png" alt="Amazon Logo" class="university-logo" />
+                        <span>Amazon</span>
+                        <img src="https://flagcdn.com/w20/us.png" alt="USA" class="country-flag" />
+                    </div>
+                    <div class="w-full mt-2">
+                        <div class="flex justify-center gap-2 mb-4">
+                            <button class="speaker-tab px-4 py-1 rounded-full text-sm font-semibold bg-blue-600 text-white focus:outline-none" data-tab="bio-mantrach">Bio</button>
+                            <button class="speaker-tab px-4 py-1 rounded-full text-sm font-semibold bg-blue-100 text-blue-900 focus:outline-none" data-tab="session-mantrach">Session</button>
+                        </div>
+                        <div class="speaker-tab-content" id="bio-mantrach">
+                            <p class="text-gray-700 text-sm">TBD</p>
+                        </div>
+                        <div class="speaker-tab-content hidden" id="session-mantrach">
+                            <p class="text-blue-600 text-center text-sm font-medium mb-4">Pioneering the Future of AI in E-Commerce: Foundation Models and Generative AI at Amazon</p>
+                            <p class="text-gray-700 text-sm">In this talk, I will explore how Amazon harnesses the power of Foundation Models and Generative AI to enhance customer experience across multiple domains. We'll dive into practical applications where multimodal AI solutions are deployed at scale, from improving search relevance to optimizing product catalog management. I'll share insights on how we've successfully implemented and scaled AI-generated customer review summaries across different languages and markets, while maintaining strict compliance with responsible AI principles. The presentation will highlight both technical challenges and solutions in deploying large-scale generative AI systems, with particular emphasis on evaluation methodologies and multilingual capabilities. We'll also discuss the evolution from traditional machine learning approaches to current generative AI implementations, providing real-world examples of their impact on e-commerce operations.</p>
+                        </div>
+                    </div>
+                    <div class="w-full mt-4 pt-4 border-t border-gray-200">
+                        <div class="flex items-center justify-center gap-6">
+                            <p class="text-gray-600 text-sm font-medium">Learn more:</p>
+                            <a href="https://www.linkedin.com/in/aminmantrach/?originalSubdomain=lu" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                                <svg class="w-6 h-6 text-[#0A66C2] hover:text-blue-800 transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm13.5 11.28h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.89v1.36h.04c.4-.75 1.37-1.54 2.82-1.54 3.02 0 3.58 1.99 3.58 4.58v5.6z"/></svg>
+                            </a>
+                            <a href="https://scholar.google.com/citations?user=257p7QMAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" title="Google Scholar">
+                                <img src="assets/images/logos/Google_Scholar.png" alt="Google Scholar" class="w-6 h-6 hover:opacity-80 transition-opacity" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
                 <!-- Dr. Emery Pierson Card -->
                 <div class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col items-center p-6">
                     <img src="assets/images/speakers/emery_pierson.jpeg" alt="Dr. Emery Pierson" class="w-32 h-32 rounded-full object-cover border-4 border-blue-100 mb-4 speaker-image" />
                     <h3 class="text-xl font-bold text-blue-900 text-center mb-1">Dr. Emery Pierson</h3>
                     <div class="text-blue-700 text-center text-base font-medium mb-1">Postdoctoral Researcher</div>
                     <div class="text-gray-600 text-center text-sm mb-2 flex items-center justify-center gap-2">
+                        <img src="assets/images/logos/lix.jpg" alt="University of Florence Logo" class="university-logo" />
+
                         <span>LIX, Ecole Polytechnique</span>
                         <img src="https://flagcdn.com/w20/fr.png" alt="France" class="country-flag" />
                     </div>
@@ -160,10 +201,10 @@
                             <button class="speaker-tab px-4 py-1 rounded-full text-sm font-semibold bg-blue-100 text-blue-900 focus:outline-none" data-tab="session-pierson">Session</button>
                         </div>
                         <div class="speaker-tab-content" id="bio-pierson">
-                            <p class="text-gray-700 text-sm">Dr. Emery Pierson is a postdoctoral researcher focusing on generative modeling of non-rigid shapes. He previously worked on Riemannian shape analysis, 3D/4D human shape comparison, geometric deep learning, and computer vision advancements.</p>
+                            <p class="text-gray-700 text-sm">I am actually a Postdoc at the LIX laboratory at Ecole Polytechnique. I work with Pr. Maks Ovsjanikov, working on generative modeling for non-rigid deformable shapes. Before, I worked with Pr. Mohamed Daoudi and Pr. Ali Amad on objective assessment of depressive patients (CALYPSO project, September-December 2023), and even before (April-July 2023), made a short Postdoc in University of Vienna under the supervision of Martin Bauer, working on Riemannian analysis of non-rigid deformable shapes. I was a PhD student at Université de Lille, supervised by Pr. Mohamed Daoudi and Pr. Juan Carlos Alvarez Paiva. My PhD is entitled: 3D and 4D Human body surface comparison and deformation: From geometric invariants to Riemannian shape analysis. In this thesis, I studied geometric representations, in particular the tools of Riemannian shape analysis, for the comparison and deformation of human shapes. My research interests lies in shape analysis, geometric deep learning and more generally computer vision and machine learning.</p>
                         </div>
                         <div class="speaker-tab-content hidden" id="session-pierson">
-                            <p class="text-blue-600 text-center text-sm font-medium mb-4">Session: "Geometric Deep Learning for Non-Rigid Shapes: From Theory to Practice"</p>
+                            <p class="text-blue-600 text-center text-sm font-medium mb-4">Geometric Deep Learning for Non-Rigid Shapes: From Theory to Practice</p>
                             <p class="text-gray-700 text-sm">This session will introduce the latest advances in geometric deep learning and shape analysis, with a focus on generative models for non-rigid shapes. Dr. Pierson will discuss practical applications in computer vision and share insights from his research at LIX, École Polytechnique.</p>
                         </div>
                     </div>
@@ -189,6 +230,8 @@
                     <h3 class="text-xl font-bold text-blue-900 text-center mb-1">Dr. Fahad Shahbaz Khan</h3>
                     <div class="text-blue-700 text-center text-base font-medium mb-1">AI Professor</div>
                     <div class="text-gray-600 text-center text-sm mb-2 flex items-center justify-center gap-2">
+                        <img src="assets/images/logos/mbuzai.png" alt="University of Florence Logo" class="university-logo" />
+
                         <span>MBZUAI</span>
                         <img src="https://flagcdn.com/w20/ae.png" alt="UAE" class="country-flag" />
                     </div>
@@ -198,11 +241,11 @@
                             <button class="speaker-tab px-4 py-1 rounded-full text-sm font-semibold bg-blue-100 text-blue-900 focus:outline-none" data-tab="session-3">Session</button>
                         </div>
                         <div class="speaker-tab-content" id="bio-3">
-                            <p class="text-gray-700 text-sm">Prof. Fahad Shahbaz Khan is a prominent expert in computer vision and deep learning, known for his impactful work on image restoration and enhancement. He has led major advances in transformer-based models for tasks like deblurring, deraining, and denoising.</p>
+                            <p class="text-gray-700 text-sm">Fahad Khan is currently a Full Professor and Deputy Department Chair of Computer Vision at the MBZUAI, Abu Dhabi, United Arab Emirates. He also holds a faculty position (Universitetslektor + Docent) at Computer Vision Laboratory, Linköping University, Sweden. He received the M.Sc. degree in Intelligent Systems Design from Chalmers University of Technology, Sweden and a Ph.D. degree in Computer Vision from Computer Vision Center Barcelona and Autonomous University of Barcelona, Spain. From 2012 to 2014, he was a postdoctoral fellow at Computer Vision Laboratory, Linköping University, Sweden. From 2014 to 2018, he was a research fellow at Linköping University, Sweden. In 2018, he was awarded the Docent title in computer vision from Linköping University, Sweden. He has achieved top ranks on various international challenges (Visual Object Tracking VOT: 1st 2014 and 2018, 2nd 2015, 2nd 2016; VOT-TIR: 1st 2015 and 2016; OpenCV Tracking: 1st 2015; 1st PASCAL VOC Segmentation and Action Recognition tasks 2010). He received the best paper award in the computer vision track at IEEE ICPR 2016, best student paper award at VISAPP 2023, best paper finalist at CVPR 2022, best paper finalist at MICCAI 2024, and best student paper honorable mention at ACCV 2024. He has published over 150 reviewed conference papers, journal articles, and book contributions, with over 6,000 citations according to Google Scholar. His research interests include a wide range of topics within computer vision and machine learning. He serves as a regular senior program committee member for leading conferences such as, CVPR, ICCV, ECCV, and is an Associate Editor of leading journals such as, IEEE TPAMI and CVIU.</p>
                         </div>
                         <div class="speaker-tab-content hidden" id="session-3">
-                            <p class="text-blue-600 text-center text-sm font-medium mb-4">Session: "Multimodal Foundation Models: Building the Next Generation of AI"</p>
-                            <p class="text-gray-700 text-sm">In his session, Dr. Khan will explore the latest advances in multimodal foundation models, discussing practical challenges and opportunities. Attendees will gain insights into model architectures, training strategies, and deployment best practices for large-scale AI systems.</p>
+                            <p class="text-blue-600 text-center text-sm font-medium mb-4">Towards Detailed Understanding of the Visual World in Generative AI Era</p>
+                            <p class="text-gray-700 text-sm">TBD</p>
                         </div>
                     </div>
                     <div class="w-full mt-4 pt-4 border-t border-gray-200">
@@ -237,10 +280,10 @@
                             <button class="speaker-tab px-4 py-1 rounded-full text-sm font-semibold bg-blue-100 text-blue-900 focus:outline-none" data-tab="session-1">Session</button>
                         </div>
                         <div class="speaker-tab-content" id="bio-1">
-                            <p class="text-gray-700 text-sm">Prof. Mohamed Daoudi is a leading researcher in computer vision and AI, with a focus on 3D shape analysis and facial recognition. He has published extensively and is a frequent speaker at international conferences.</p>
+                            <p class="text-gray-700 text-sm">Mohamed DAOUDI is a Full Professor of Computer Science at IMT Nord Europe and the Head of Image group at CRIStAL Laboratory (UMR CNRS 9189). His research interests include computer vision and machine learning for human behavior understanding. He has published over 150 papers in some of the most distinguished scientific journals and international conferences. He is/was Associate Editor of Image and Vision Computing, IEEE Transactions on Multimedia, IEEE Trans. on Affective Computing and Computer Vision and Image Understanding, Computers & Graphics, Guest Editor for Computer Vision and Image Understanding Special Issue on "Special Issue-Eyes on People Recent Trends on Human Analysis, Perception and Generation-CVIU", Guest Editor for Image and Vision Computing On "Learning with Manifolds in Computer Vision", Guest Editor for Sensors "Computer Vision in Human Analysis: From Face and Body to Clothes", and Guest Editor for IEEE Transactions on Biometrics, Behavior and Identity Science on "Selected Best Works From Automated Face and Gesture Recognition 2019". He was General Chair of IEEE International Conference on Automatic Face and Gesture Recognition IEEE FG 2019 in Lille (France), 3D Object Retrieval Symposium (2010, 2022, 2023), Shape Modeling International Conference (2015), has organized successful workshops in Face and Gesture Analysis for Health Informatics (FGAHI at CVPR 2023, ICMI 2020, CVPR 2019, FG 2018), Learning with few or without annotated face, body and gesture data (LFA at WACV 2023, IEEE FG 2024), Generation of Human Face and Body Behavior (GHB at WACV 2021, ICIP 2023), Towards a Complete Analysis of People: From Face and Body to Clothes (T-CAP at ICAP 2022, ICPR 2022, ECCV 2022), Manifold Learning, From Euclid to Riemann (ManLearn at ICPR 2021, ICCV 2017), and has served as area chair at 3DV 2021, IEEE FG 2024, ACM Multimedia (2021, 2022, 2023, 2024), EUSIPCO (2013, 2015), and he will serve as General Chair for IEEE FG 2025. He is IAPR Fellow, AAIA Fellow, a IEEE senior member, an ACM member, and a member of ELLIS. Professor DAOUDI has graduated 30 doctoral and served on numerous other graduate student committees. Many of his students have gone on to successful in careers in industry, academia.</p>
                         </div>
                         <div class="speaker-tab-content hidden" id="session-1">
-                            <p class="text-blue-600 text-center text-sm font-medium mb-4">Session: "3D Vision and AI: Breaking New Ground in Shape Analysis"</p>
+                            <p class="text-blue-600 text-center text-sm font-medium mb-4">3D Vision and AI: Breaking New Ground in Shape Analysis</p>
                             <p class="text-gray-700 text-sm">In his session, Prof. Daoudi will discuss the latest advances in 3D vision and its applications in AI, including practical demonstrations and research insights.</p>
                         </div>
                     </div>
@@ -262,6 +305,47 @@
                 
                 
                 
+                <!-- Nouamane Tazi Card -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col items-center p-6">
+                    <img src="assets/images/speakers/nouamane.jpeg" alt="Nouamane Tazi" class="w-32 h-32 rounded-full object-cover border-4 border-blue-100 mb-4 speaker-image" />
+                    <h3 class="text-xl font-bold text-blue-900 text-center mb-1">Eng. Nouamane Tazi</h3>
+                    <div class="text-blue-700 text-center text-base font-medium mb-1">ML Research Engineer</div>
+                    <div class="text-gray-600 text-center text-sm mb-2 flex items-center justify-center gap-2">
+                        <img src="assets/images/logos/huggingface.png" alt="Hugging Face Logo" class="university-logo" />
+                        <span>Hugging Face</span>
+                        <img src="https://flagcdn.com/w20/us.png" alt="Morocco" class="country-flag" />
+                    </div>
+                    <div class="w-full mt-2">
+                        <div class="flex justify-center gap-2 mb-4">
+                            <button class="speaker-tab px-4 py-1 rounded-full text-sm font-semibold bg-blue-600 text-white focus:outline-none" data-tab="bio-tazi">Bio</button>
+                            <button class="speaker-tab px-4 py-1 rounded-full text-sm font-semibold bg-blue-100 text-blue-900 focus:outline-none" data-tab="session-tazi">Session</button>
+                        </div>
+                        <div class="speaker-tab-content" id="bio-tazi">
+                            <p class="text-gray-700 text-sm">Nouamane Tazi is a Moroccan machine learning engineer and researcher at Hugging Face, specializing in AI, deep learning, and large language models. He holds a Master's in Artificial Intelligence from Université Paris-Saclay and has contributed to major open-source projects like StarCoder, SmoLLM and The UltraScale Playbook. Nouamane is also a core developer of the Nanotron library, a minimalistic and scalable tool for pretraining large language models with advanced 5D parallelism and transparent design.</p>
+                        </div>
+                        <div class="speaker-tab-content hidden" id="session-tazi">
+                            <p class="text-blue-600 text-center text-sm font-medium mb-4">Training LLMs: Optimize and Scale Your Training</p>
+                            <p class="text-gray-700 text-sm">In this session, Nouamane will cover the latest trends in large language model (LLM) training, along with tips and tricks to optimize memory consumption and throughput. Attendees will also gain insights into scaling training across multiple GPUs, based on the recent book The UltraScale Playbook.</p>
+                        </div>
+                    </div>
+                    <div class="w-full mt-4 pt-4 border-t border-gray-200">
+                        <div class="flex items-center justify-center gap-6">
+                            <p class="text-gray-600 text-sm font-medium">Learn more:</p>
+                            <a href="https://www.linkedin.com/in/nouamanetazi/?originalSubdomain=fr" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                                <svg class="w-6 h-6 text-[#0A66C2] hover:text-blue-800 transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm13.5 11.28h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.89v1.36h.04c.4-.75 1.37-1.54 2.82-1.54 3.02 0 3.58 1.99 3.58 4.58v5.6z"/></svg>
+                            </a>
+                            <a href="https://scholar.google.com/citations?user=q2bZs1IAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" title="Google Scholar">
+                                <img src="assets/images/logos/Google_Scholar.png" alt="Google Scholar" class="w-6 h-6 hover:opacity-80 transition-opacity" />
+                            </a>
+                            <a href="https://github.com/NouamaneTazi" target="_blank" rel="noopener noreferrer" title="Personal Website">
+                                <img src="assets/images/icons/domaine.png" alt="Website" class="w-6 h-6 hover:opacity-80 transition-opacity" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+
                 <!-- Xavier Alameda-Pineda Card -->
                 <div class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col items-center p-6">
                     <img src="assets/images/speakers/speaker1.jpg" alt="Dr. Xavier Alameda-Pineda" class="w-32 h-32 rounded-full object-cover border-4 border-blue-100 mb-4 speaker-image" />
@@ -280,11 +364,11 @@
                             <button class="speaker-tab px-4 py-1 rounded-full text-sm font-semibold bg-blue-100 text-blue-900 focus:outline-none" data-tab="session-4">Session</button>
                         </div>
                         <div class="speaker-tab-content" id="bio-4">
-                            <p class="text-gray-700 text-sm">Prof. Xavier Alameda-Pineda is a leading expert in multimodal machine learning and human-robot interaction. His work has earned international recognition, including the ACM SIGMM Rising Star Award.</p>
+                            <p class="text-gray-700 text-sm">Xavier Alameda-Pineda holds the position of Research Director at Inria and is the Leader of the RobotLearn Team. He obtained the M.Sc. (equivalent) in Mathematics in 2008, Telecommunications in 2009 from BarcelonaTech, and Computer Science in 2010 from Univ. Grenoble-Alpes (UGA). He then worked towards his Ph.D. in Mathematics and Computer Science, and obtained it in 2013, from UGA. After a two-year post-doc period at the Multimodal Human Understanding Group, at the University of Trento, he was appointed Research Scientist at Inria until 2024. Xavier is an active member of SIGMM, an IEEE Senior Member, and an ELLIS Fellow. He was the Coordinator of the terminated H2020 Project SPRING: Socially Pertinent Robots in Gerontological Healthcare and co-lead the "Audio-visual machine perception and interaction for companion robots" chair of the Multidisciplinary Institute of Artificial Intelligence. Xavier's research interests are at the crossroads of machine learning, computer vision, and audio processing for scene and behavior analysis and human-robot interaction. More info here: Short CV — Full CV — GoogleScholar</p>
                         </div>
                         <div class="speaker-tab-content hidden" id="session-4">
-                            <p class="text-blue-600 text-center text-sm font-medium mb-4">Session: "Generative AI: The Future of Creative Computing"</p>
-                            <p class="text-gray-700 text-sm">Prof. Doe's session will cover the latest trends in generative AI, including hands-on demonstrations of deep learning architectures and their applications in creative industries.</p>
+                            <p class="text-blue-600 text-center text-sm font-medium mb-4">From VAE to Diffusion: probabilistic learning with audio-visual data.</p>
+                            <p class="text-gray-700 text-sm">TBD</p>
                         </div>
                     </div>
                     <div class="w-full mt-4 pt-4 border-t border-gray-200">
@@ -302,6 +386,12 @@
                         </div>
                     </div>
                 </div>
+                             
+                
+                
+                
+
+                
                 
                 
                 
@@ -333,7 +423,7 @@
     <footer class="w-full bg-blue-950 pt-16 pb-8 px-4 sm:px-6 lg:px-8 mt-0">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12 md:gap-0">
             <div>
-                <h3 class="text-white text-xl font-bold mb-6">AI Spring School</h3>
+                <h3 class="text-white text-xl font-bold mb-6">AI Summer School</h3>
                 <ul class="space-y-3">
                     <li><a href="course.html" class="text-blue-400 text-lg font-bold tracking-wide hover:underline">School Course</a></li>
                     <li><a href="speakers.html" class="text-blue-400 text-lg font-bold tracking-wide hover:underline">Speakers</a></li>
