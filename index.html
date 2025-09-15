@@ -310,52 +310,7 @@
         </div>
     </section>
 
-        <!-- Countdown Section -->
-        <section class="w-full bg-white border-t border-blue-100 py-16" data-aos="fade-up">
-            <div class="max-w-4xl mx-auto flex flex-col items-center justify-center">
-                <div id="countdown" class="w-full flex flex-col sm:flex-row items-center justify-center gap-10 sm:gap-20">
-                    <div class="flex flex-col items-center">
-                        <span id="days" class="text-6xl sm:text-7xl md:text-8xl font-extrabold text-blue-600 tracking-tight">00</span>
-                        <span class="mt-4 text-2xl sm:text-3xl md:text-4xl font-extrabold text-blue-900 tracking-widest">DAYS</span>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <span id="hours" class="text-6xl sm:text-7xl md:text-8xl font-extrabold text-blue-600 tracking-tight">00</span>
-                        <span class="mt-4 text-2xl sm:text-3xl md:text-4xl font-extrabold text-blue-900 tracking-widest">HOURS</span>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <span id="minutes" class="text-6xl sm:text-7xl md:text-8xl font-extrabold text-blue-600 tracking-tight">00</span>
-                        <span class="mt-4 text-2xl sm:text-3xl md:text-4xl font-extrabold text-blue-900 tracking-widest">MINUTES</span>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <span id="seconds" class="text-6xl sm:text-7xl md:text-8xl font-extrabold text-blue-600 tracking-tight">00</span>
-                        <span class="mt-4 text-2xl sm:text-3xl md:text-4xl font-extrabold text-blue-900 tracking-widest">SECONDS</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-    
-        <script>
-        // Countdown Timer Script
-        const eventDate = new Date('2025-09-08T00:00:00');
-        function updateCountdown() {
-            const now = new Date();
-            const diff = eventDate - now;
-            if (diff <= 0) {
-                document.getElementById('countdown').innerHTML = '<span class="text-3xl font-bold text-teal-400">The event has started!</span>';
-                return;
-            }
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-            const minutes = Math.floor((diff / (1000 * 60)) % 60);
-            const seconds = Math.floor((diff / 1000) % 60);
-            document.getElementById('days').textContent = String(days).padStart(2, '0');
-            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
-        }
-        updateCountdown();
-        setInterval(updateCountdown, 1000);
-        </script>
+        
 
         <!-- Who Should Attend Section -->
         <section class="w-full bg-blue-50 py-20 px-4 sm:px-6 lg:px-8" data-aos="fade-up">
@@ -601,6 +556,11 @@
                     <div class="bg-white rounded-2xl shadow-lg flex items-center justify-center p-6 w-48 h-28 hover:shadow-xl transition-shadow duration-200">
                         <a href="https://sigmm.org/" target="_blank" rel="noopener noreferrer" title="Visit SIGMM Website">
                             <img src="assets/images/logos/acm.png" alt="ACM Logo" class="h-16 w-auto object-contain hover:opacity-80 transition-opacity duration-200">
+                        </a>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-lg flex items-center justify-center p-6 w-48 h-28 hover:shadow-xl transition-shadow duration-200">
+                        <a href="https://www.google.com/" target="_blank" rel="noopener noreferrer" title="Visit Google Website">
+                            <img src="assets/images/logos/google.png" alt="Google Logo" class="h-16 w-auto object-contain hover:opacity-80 transition-opacity duration-200">
                         </a>
                     </div>
                 </div>
